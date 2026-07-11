@@ -14,14 +14,14 @@
     .print-body{padding:26px 32px 32px}.print-image{height:280px;margin-bottom:22px;border-radius:22px;background:#eadfce;overflow:hidden;box-shadow:inset 0 0 0 1px #ffffff80}.print-image img{width:100%;height:100%;object-fit:cover}.placeholder{display:grid;place-items:center;background:linear-gradient(135deg,#d9ead2,#f5dfbf)}.placeholder span{font:700 74px Georgia;color:var(--green)}
     .section-title{font:700 28px/1.1 Georgia,serif;margin:26px 0 14px;color:var(--ink)}dl{margin:0}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}.detail{padding:12px 0;border-top:1px dashed var(--line)}dt{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}dd{margin:7px 0 0;line-height:1.6;white-space:pre-line}a{color:#287345}
     .ingredients{display:grid;grid-template-columns:1fr;gap:8px;margin:0;padding:0;list-style:none}.ingredient{display:grid;grid-template-columns:minmax(68px,auto) 1fr;gap:10px;align-items:start;padding:12px 13px;border:1px solid var(--line);border-radius:16px;background:#fffaf1}.ingredient-amount{color:var(--green);font-weight:900}.ingredient-name{line-height:1.45}.ingredient-note{display:block;color:var(--muted);font-size:.92em;margin-top:2px}
-    .steps{display:grid;gap:18px;margin-top:8px}.step{display:grid;grid-template-columns:minmax(190px,32%) 1fr;gap:18px;align-items:start;padding:16px;border:1px solid var(--line);border-radius:20px;background:#fffaf1}.step-image{height:180px;border-radius:16px;background:#eadfce;overflow:hidden}.step-image img{width:100%;height:100%;object-fit:cover}.step-placeholder{display:grid;place-items:center;color:#8a7765;font-weight:700}.step h3{margin:0 0 8px;color:var(--terracotta);font:900 15px Segoe UI,sans-serif;letter-spacing:.08em;text-transform:uppercase}.step p{margin:0;line-height:1.68;white-space:pre-line}
+    .steps{display:grid;gap:18px;margin-top:8px}.step{display:grid;grid-template-columns:minmax(190px,32%) 1fr;gap:18px;align-items:start;padding:16px;border:1px solid var(--line);border-radius:20px;background:#fffaf1}.step.no-image{grid-template-columns:1fr}.step-image{height:180px;border-radius:16px;background:#eadfce;overflow:hidden}.step-image img{width:100%;height:100%;object-fit:cover}.step h3{margin:0 0 8px;color:var(--terracotta);font:900 15px Segoe UI,sans-serif;letter-spacing:.08em;text-transform:uppercase}.step p{margin:0;line-height:1.68;white-space:pre-line}
     .print-footer{display:flex;justify-content:space-between;gap:18px;margin:28px 0 0;padding:16px 0 0;border-top:1px dashed var(--line);color:var(--muted);font-size:13px}
     @media(max-width:720px){.details-grid{grid-template-columns:1fr}.step{grid-template-columns:1fr}.step-image{height:220px}}
     .actions{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap}.action{appearance:none;border:1px solid #a6b99f;background:#f5eadb;color:var(--green);border-radius:999px;padding:12px 20px;font:900 14px Segoe UI,sans-serif;cursor:pointer;text-decoration:none}.action.primary{background:var(--green);border-color:var(--green);color:white}.action:hover{filter:brightness(.97)}
     @page{size:A4 portrait;margin:10mm}
     @media print{
       html,body{width:190mm;min-height:277mm;background:#fff;color:#111;font-size:10.5pt}
-      .intro,.ad-placeholder,.actions{display:none!important}.page{max-width:none;margin:0;padding:0}.preview{border:0;border-radius:0;box-shadow:none;overflow:visible;zoom:var(--print-scale,1)}.preview-header{padding:0 0 4mm;border-bottom:0}.preview h1{font-size:24pt;margin-bottom:3mm}.summary{margin:0;line-height:1.35}.print-body{padding:0}.print-image{float:left;width:52mm;height:46mm;border-radius:4mm;margin:0 7mm 4mm 0}.section-title{clear:both;font-size:14pt;margin:4mm 0 2mm}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 7mm}.detail{break-inside:avoid;padding:1.7mm 0}dt{font-size:8pt}dd{font-size:9.5pt;line-height:1.28}.ingredients{grid-template-columns:1fr;gap:0}.ingredient{break-inside:avoid;display:block;padding:1.2mm 0;border:0;border-top:1px solid #eee;border-radius:0;background:#fff}.ingredient-amount{display:inline;color:#111;font-weight:800}.ingredient-amount:not(:empty)::after{content:" - "}.ingredient-name{display:inline}.ingredient-note{display:inline;color:#555}.ingredient-note:not(:empty)::before{content:" ("}.ingredient-note:not(:empty)::after{content:")"}.steps{gap:2mm}.step{break-inside:avoid;grid-template-columns:34mm 1fr;gap:4mm;padding:2mm 0;border:0;border-top:1px solid #ddd;border-radius:0;background:#fff}.step-image{height:28mm;border-radius:2mm}.step h3{font-size:8.5pt;margin-bottom:1mm}.step p{font-size:9.5pt;line-height:1.28}a{color:#111;text-decoration:none}
+      .intro,.ad-placeholder,.actions{display:none!important}.page{max-width:none;margin:0;padding:0}.preview{border:0;border-radius:0;box-shadow:none;overflow:visible;zoom:var(--print-scale,1)}.preview-header{padding:0 0 4mm;border-bottom:0}.preview h1{font-size:24pt;margin-bottom:3mm}.summary{margin:0;line-height:1.35}.print-body{padding:0}.print-image{float:left;width:52mm;height:46mm;border-radius:4mm;margin:0 7mm 4mm 0}.section-title{clear:both;font-size:14pt;margin:4mm 0 2mm}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 7mm}.detail{break-inside:avoid;padding:1.7mm 0}dt{font-size:8pt}dd{font-size:9.5pt;line-height:1.28}.ingredients{grid-template-columns:1fr;gap:0}.ingredient{break-inside:avoid;display:block;padding:1.2mm 0;border:0;border-top:1px solid #eee;border-radius:0;background:#fff}.ingredient-amount{display:inline;color:#111;font-weight:800}.ingredient-amount:not(:empty)::after{content:" - "}.ingredient-name{display:inline}.ingredient-note{display:inline;color:#555}.ingredient-note:not(:empty)::before{content:" ("}.ingredient-note:not(:empty)::after{content:")"}.steps{gap:2mm}.step{break-inside:avoid;grid-template-columns:34mm 1fr;gap:4mm;padding:2mm 0;border:0;border-top:1px solid #ddd;border-radius:0;background:#fff}.step.no-image{grid-template-columns:1fr}.step-image{height:28mm;border-radius:2mm}.step h3{font-size:8.5pt;margin-bottom:1mm}.step p{font-size:9.5pt;line-height:1.28}a{color:#111;text-decoration:none}
       .print-footer{break-inside:avoid;margin-top:5mm;padding-top:2mm;font-size:8.5pt;color:#555;border-top:1px solid #ddd}
     }
   </style>
@@ -58,20 +58,20 @@
 </section>
         <section>
   <h2 class="section-title">Preparación paso a paso</h2>
-  <div class="steps"><article class="step">
-  <div class="step-image step-placeholder">Sin imagen</div>
+  <div class="steps"><article class="step no-image">
+  
   <div>
     <h3>Paso 1</h3>
     <p>azucar y manteca</p>
   </div>
-</article><article class="step">
-  <div class="step-image step-placeholder">Sin imagen</div>
+</article><article class="step no-image">
+  
   <div>
     <h3>Paso 2</h3>
     <p>huevos</p>
   </div>
-</article><article class="step">
-  <div class="step-image step-placeholder">Sin imagen</div>
+</article><article class="step no-image">
+  
   <div>
     <h3>Paso 3</h3>
     <p>hornear</p>
