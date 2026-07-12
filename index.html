@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Cuaderno de Recetas</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1783867388046">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1783867388046">
-<meta property="og:image" content="assets/logo-icon-512.png?v=1783867388046">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1783868280007">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1783868280007">
+<meta property="og:image" content="assets/logo-icon-512.png?v=1783868280007">
 
   <style>
     :root{--ink:#3a210f;--muted:#746456;--green:#4F9B68;--sage:#e4ead2;--terracotta:#d36b43;--pale:#f4eadb;--paper:#fff8ec;--card:#fffdf8;--line:#eadcc7;--shadow:#3b210f14}
@@ -15,7 +15,7 @@
     header:after{content:"";position:absolute;right:-90px;top:-110px;width:330px;height:330px;border-radius:50%;background:#ffffff50;box-shadow:-70px 120px 0 #d36b4314}
     .brand{position:relative;font:800 13px/1 Segoe UI,sans-serif;letter-spacing:.22em;color:var(--green)}.brand-logo{position:relative;display:block;max-width:min(820px,92vw);margin:0 auto 20px}.brand-logo img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 12px 34px #3b210f10}
     h1{position:relative;font:700 clamp(34px,6vw,64px)/.98 Georgia,serif;margin:18px auto 16px;max-width:900px;color:var(--ink)}
-    header p{position:relative;max-width:760px;margin-left:auto;margin-right:auto;color:var(--muted);font-size:18px;line-height:1.7}.toolbar{max-width:1180px;margin:-28px auto 34px;padding:0 24px;position:relative;z-index:2}
+    header p{position:relative;max-width:760px;margin-left:auto;margin-right:auto;color:var(--muted);font-size:18px;line-height:1.7}.site-nav{position:relative;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:24px auto 0}.site-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 18px;border:1px solid #d8c6ad;border-radius:999px;background:#fffdf8cc;color:var(--ink);font-weight:850;text-decoration:none;box-shadow:0 8px 22px #3b210f0d}.site-nav a.primary{background:var(--green);border-color:var(--green);color:#fff}.site-nav a:hover{transform:translateY(-1px);box-shadow:0 12px 26px #3b210f14}.toolbar{max-width:1180px;margin:-28px auto 34px;padding:0 24px;position:relative;z-index:2}
     .search{display:flex;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:999px;box-shadow:0 16px 44px var(--shadow);padding:9px 18px}
     .search input{width:100%;border:0;outline:0;padding:12px;font-size:17px;color:var(--ink)}.count{white-space:nowrap;color:var(--muted);font-size:14px}
     main{max-width:1180px;margin:auto;padding:0 24px 70px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:24px}
@@ -29,7 +29,7 @@
     .ad-placeholder{display:grid;place-items:center;min-height:92px;border:1px dashed #c9a38b;border-radius:20px;background:linear-gradient(135deg,#fffdf8,#f6ead8);color:#8a6d59;font-size:13px;font-weight:700;letter-spacing:.08em;text-align:center;text-transform:uppercase}
     .toolbar+.ad-placeholder{max-width:1180px;margin:-14px auto 34px}.grid>.ad-placeholder{min-height:100%;padding:24px}
     .empty{text-align:center;padding:80px 20px;background:#fffdf8;border:1px dashed #b9a88f;border-radius:28px}.empty span{font-size:52px}.empty h2{font:700 34px Georgia;margin:12px}.empty p{color:var(--muted)}
-    .hidden{display:none}@media(max-width:600px){header{padding-top:42px}.grid{grid-template-columns:1fr}.count{display:none}}
+    .hidden{display:none}@media(max-width:600px){header{padding-top:42px}.site-nav{gap:8px}.site-nav a{flex:1 1 42%;padding:9px 10px}.grid{grid-template-columns:1fr}.count{display:none}}
     @page{size:A4 portrait;margin:10mm}
     @media print{
       html,body{width:190mm;min-height:277mm;background:#fff;color:#111;font-size:10.5pt}
@@ -55,9 +55,9 @@
 </head>
 <body>
   <header><picture class="brand-logo">
-  <source media="(max-width:640px)" srcset="assets/logo-mobile.png?v=1783867388046">
-  <img src="assets/logo-header.png?v=1783867388046" alt="Tu propio cuaderno de Recetas">
-</picture><h1></h1><p>Elige, crea, y colecciona tus recetas preferidas.</p></header>
+  <source media="(max-width:640px)" srcset="assets/logo-mobile.png?v=1783868280007">
+  <img src="assets/logo-header.png?v=1783868280007" alt="Tu propio cuaderno de Recetas">
+</picture><h1></h1><p>Elige, crea, y colecciona tus recetas preferidas.</p><nav class="site-nav" aria-label="Secciones principales"><a class="primary" href="index.html">Recetas</a><a href="enviar-receta.html">Enviar receta</a><a href="ayuda.html">Ayuda</a><a href="mi-cuaderno.html">Mi cuaderno</a></nav></header>
   <div class="toolbar"><label class="search">🔎<input id="search" type="search" placeholder="Buscar recetas, ingredientes o ideas…" autofocus><span class="count" id="count">5 publicaciones</span></label></div>
   <main><section class="grid" id="recipes"><article class="card clickable-card" data-search="R00003 Bondiola desmenuzada   Fernando      bondiola
 morron
@@ -71,8 +71,8 @@ cerveza  los ingredientes
 
 dorar la bondiola
 
-cocinar por 3 horas  False" tabindex="0" role="link" onclick="window.open('receta-8.html?v=1783867388046','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-8.html?v=1783867388046','_blank','noopener');}">
-  <div class="image"><img src="media/receta-8.png?v=1783867388046" alt="Bondiola desmenuzada"></div>
+cocinar por 3 horas  False" tabindex="0" role="link" onclick="window.open('receta-8.html?v=1783868280007','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-8.html?v=1783868280007','_blank','noopener');}">
+  <div class="image"><img src="media/receta-8.png?v=1783868280007" alt="Bondiola desmenuzada"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Bondiola desmenuzada</h2>
@@ -85,8 +85,8 @@ cocinar por 3 horas  False" tabindex="0" role="link" onclick="window.open('recet
 
 huevos
 
-hornear  False" tabindex="0" role="link" onclick="window.open('receta-6.html?v=1783867388046','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-6.html?v=1783867388046','_blank','noopener');}">
-  <div class="image"><img src="media/receta-6.jpg?v=1783867388046" alt="Budin"></div>
+hornear  False" tabindex="0" role="link" onclick="window.open('receta-6.html?v=1783868280007','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-6.html?v=1783868280007','_blank','noopener');}">
+  <div class="image"><img src="media/receta-6.jpg?v=1783868280007" alt="Budin"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Budin</h2>
@@ -104,8 +104,8 @@ pasas de uva  medir los ingredientes
 
 mezclar
 
-Hornear 40 minutos a 180 grados  False" tabindex="0" role="link" onclick="window.open('receta-7.html?v=1783867388046','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-7.html?v=1783867388046','_blank','noopener');}">
-  <div class="image"><img src="media/receta-7.png?v=1783867388046" alt="Budin de manzana, banana, avena y pasas"></div>
+Hornear 40 minutos a 180 grados  False" tabindex="0" role="link" onclick="window.open('receta-7.html?v=1783868280007','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-7.html?v=1783868280007','_blank','noopener');}">
+  <div class="image"><img src="media/receta-7.png?v=1783868280007" alt="Budin de manzana, banana, avena y pasas"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Budin de manzana, banana, avena y pasas</h2>
@@ -124,8 +124,8 @@ polvo de hornear  medir los ingredientes
 
 mezclar todo
 
-hornear 15 minutos a 180 grados  False" tabindex="0" role="link" onclick="window.open('receta-9.html?v=1783867388046','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-9.html?v=1783867388046','_blank','noopener');}">
-  <div class="image"><img src="media/receta-9.png?v=1783867388046" alt="Galletas de avena y naranja"></div>
+hornear 15 minutos a 180 grados  False" tabindex="0" role="link" onclick="window.open('receta-9.html?v=1783868280007','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-9.html?v=1783868280007','_blank','noopener');}">
+  <div class="image"><img src="media/receta-9.png?v=1783868280007" alt="Galletas de avena y naranja"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Galletas de avena y naranja</h2>
@@ -153,8 +153,8 @@ Ir agregando lentamente el agua caliente hasta lograr una mezcla espesa.
 
 Volcar en una fuente aceitada (muy poco).
 
-Hornear a 180&#176;C durante 35–45 min, hasta que quede firme y dorada arriba  False" tabindex="0" role="link" onclick="window.open('receta-10.html?v=1783867388046','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-10.html?v=1783867388046','_blank','noopener');}">
-  <div class="image"><img src="media/receta-10.png?v=1783867388046" alt="Sopa paraguaya light"></div>
+Hornear a 180&#176;C durante 35–45 min, hasta que quede firme y dorada arriba  False" tabindex="0" role="link" onclick="window.open('receta-10.html?v=1783868280007','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-10.html?v=1783868280007','_blank','noopener');}">
+  <div class="image"><img src="media/receta-10.png?v=1783868280007" alt="Sopa paraguaya light"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Sopa paraguaya light</h2>
@@ -164,8 +164,10 @@ Hornear a 180&#176;C durante 35–45 min, hasta que quede firme y dorada arriba 
   </div>
 </article></section></main>
   <script>
-    const input=document.querySelector('#search'),cards=[...document.querySelectorAll('.card')],counter=document.querySelector('#count');
+    const input=document.querySelector('#search'),grid=document.querySelector('#recipes'),cards=[...document.querySelectorAll('.card')],counter=document.querySelector('#count');
+    shuffleCards();
     input.addEventListener('input',()=>{const q=input.value.toLocaleLowerCase('es').trim();let shown=0;cards.forEach(card=>{const visible=!q||card.dataset.search.toLocaleLowerCase('es').includes(q);card.classList.toggle('hidden',!visible);if(visible)shown++});counter.textContent=`${shown} publicaciones`});
+    function shuffleCards(){if(!grid||cards.length<2)return;const shuffled=[...cards];for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]}shuffled.forEach(card=>grid.appendChild(card))}
     function openRecipeWindow(url){const opened=window.open(url,'_blank','popup=yes,width=980,height=900,scrollbars=yes,resizable=yes');if(opened){opened.focus();return false}return true}
     let printedDetails=null;
     function printRecipe(button){
