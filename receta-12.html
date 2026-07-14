@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Milanesas de carne</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1784064212999">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1784064212999">
+<meta property="og:image" content="assets/logo-icon-512.png?v=1784064212999">
+
+  <style>
+    :root{--ink:#3a210f;--muted:#746456;--green:#4F9B68;--sage:#e4ead2;--terracotta:#d36b43;--cream:#fff8ec;--paper:#fffdf8;--line:#eadcc7;--shadow:#3b210f14}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 12% 0,#fff2d9 0 22%,transparent 44%),linear-gradient(135deg,#fff9ef,#f7ecdc);color:var(--ink);font-family:Segoe UI,system-ui,sans-serif;font-size:16px}
+    .page{max-width:960px;margin:0 auto;padding:38px 22px 64px}.intro{text-align:center;margin-bottom:24px}.intro p{color:var(--muted);line-height:1.65}.recipe-page-logo{display:block;width:min(520px,88vw);height:auto;margin:0 auto 18px;border-radius:14px;box-shadow:0 10px 28px #3b210f10}
+    .ad-placeholder{display:grid;place-items:center;min-height:110px;margin:0 0 24px;border:1px dashed #c9a38b;border-radius:20px;background:linear-gradient(135deg,#fffdf8,#f6ead8);color:#8a6d59;font-size:13px;font-weight:700;letter-spacing:.08em;text-align:center;text-transform:uppercase}
+    .preview{background:var(--paper);border:1px solid var(--line);border-radius:28px;box-shadow:0 18px 54px var(--shadow);overflow:hidden}.preview-header{padding:30px 32px 26px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#fffdf8,#fff1dc)}
+    .eyebrow{margin:0 0 8px;color:var(--terracotta);font-size:11px;font-weight:900;letter-spacing:.16em}.preview h1{font:700 40px/1.05 Georgia,serif;margin:0 0 12px}.preview-author{margin:-2px 0 12px;color:var(--green);font-size:14px;font-weight:900}.summary{color:var(--muted);line-height:1.58;white-space:pre-line}
+    .print-body{padding:26px 32px 32px}.print-image{height:280px;margin-bottom:22px;border-radius:22px;background:#eadfce;overflow:hidden;box-shadow:inset 0 0 0 1px #ffffff80}.print-image img{width:100%;height:100%;object-fit:cover}.placeholder{display:grid;place-items:center;background:linear-gradient(135deg,#e4ead2,#f6dfc2)}.placeholder span{font:700 74px Georgia;color:var(--green)}
+    .section-title{font:700 28px/1.1 Georgia,serif;margin:26px 0 14px;color:var(--ink)}dl{margin:0}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}.detail{padding:12px 0;border-top:1px dashed var(--line)}dt{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}dd{margin:7px 0 0;line-height:1.6;white-space:pre-line}a{color:#287345}
+    .ingredients{display:grid;grid-template-columns:1fr;gap:8px;margin:0;padding:0;list-style:none}.ingredient{display:grid;grid-template-columns:minmax(68px,auto) 1fr;gap:10px;align-items:start;padding:12px 13px;border:1px solid var(--line);border-radius:16px;background:#fffaf1}.ingredient-amount{color:var(--green);font-weight:900}.ingredient-name{line-height:1.45}.ingredient-note{display:block;color:var(--muted);font-size:.92em;margin-top:2px}
+    .steps{display:grid;gap:18px;margin-top:8px}.step{display:grid;grid-template-columns:minmax(190px,32%) 1fr;gap:18px;align-items:start;padding:16px;border:1px solid var(--line);border-radius:20px;background:#fffaf1}.step.no-image{grid-template-columns:1fr}.step-image{height:180px;border-radius:16px;background:#eadfce;overflow:hidden}.step-image img{width:100%;height:100%;object-fit:cover}.step h3{margin:0 0 8px;color:var(--terracotta);font:900 15px Segoe UI,sans-serif;letter-spacing:.08em;text-transform:uppercase}.step p{margin:0;line-height:1.68;white-space:pre-line}
+    .print-footer{display:flex;justify-content:space-between;gap:18px;margin:28px 0 0;padding:16px 0 0;border-top:1px dashed var(--line);color:var(--muted);font-size:13px}
+    @media(max-width:720px){.details-grid{grid-template-columns:1fr}.step{grid-template-columns:1fr}.step-image{height:220px}}
+    .actions{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap}.action{appearance:none;border:1px solid #a6b99f;background:#f5eadb;color:var(--green);border-radius:999px;padding:12px 20px;font:900 14px Segoe UI,sans-serif;cursor:pointer;text-decoration:none}.action.primary{background:var(--green);border-color:var(--green);color:white}.action:hover{filter:brightness(.97)}
+    @page{size:A4 portrait;margin:10mm}
+    @media print{
+      html,body{width:190mm;min-height:277mm;background:#fff;color:#111;font-size:10.5pt}
+      .intro,.ad-placeholder,.actions{display:none!important}.page{max-width:none;margin:0;padding:0}.preview{border:0;border-radius:0;box-shadow:none;overflow:visible;zoom:var(--print-scale,1)}.preview-header{padding:0 0 4mm;border-bottom:0}.preview h1{font-size:24pt;margin-bottom:3mm}.summary{margin:0;line-height:1.35}.print-body{padding:0}.print-image{float:left;width:52mm;height:46mm;border-radius:4mm;margin:0 7mm 4mm 0}.section-title{clear:both;font-size:14pt;margin:4mm 0 2mm}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 7mm}.detail{break-inside:avoid;padding:1.7mm 0}dt{font-size:8pt}dd{font-size:9.5pt;line-height:1.28}.ingredients{grid-template-columns:1fr;gap:0}.ingredient{break-inside:avoid;display:block;padding:1.2mm 0;border:0;border-top:1px solid #eee;border-radius:0;background:#fff}.ingredient-amount{display:inline;color:#111;font-weight:800}.ingredient-amount:not(:empty)::after{content:" - "}.ingredient-name{display:inline}.ingredient-note{display:inline;color:#555}.ingredient-note:not(:empty)::before{content:" ("}.ingredient-note:not(:empty)::after{content:")"}.steps{gap:2mm}.step{break-inside:avoid;grid-template-columns:34mm 1fr;gap:4mm;padding:2mm 0;border:0;border-top:1px solid #ddd;border-radius:0;background:#fff}.step.no-image{grid-template-columns:1fr}.step-image{height:28mm;border-radius:2mm}.step h3{font-size:8.5pt;margin-bottom:1mm}.step p{font-size:9.5pt;line-height:1.28}a{color:#111;text-decoration:none}
+      .print-footer{break-inside:avoid;margin-top:5mm;padding-top:2mm;font-size:8.5pt;color:#555;border-top:1px solid #ddd}
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="intro">
+      <img class="recipe-page-logo" src="assets/logo-header.png?v=1784064212999" alt="Tu propio cuaderno de Recetas">
+      <p class="eyebrow">RECETA COMPLETA</p>
+      <h1>Milanesas de carne</h1>
+      <p>Revisá la receta completa y, si querés guardarla, usá el botón de abajo para imprimir o descargar como PDF.</p>
+    </section>
+    <aside class="ad-placeholder" aria-label="Publicidad en receta">
+  <span>Espacio reservado para publicidad</span>
+</aside>
+    <article class="preview" id="printSheet">
+      <div class="preview-header">
+        <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
+        <h1>Milanesas de carne</h1>
+        <p class="preview-author">Por Fernando I</p>
+        <p class="summary">Una nueva publicaci&#243;n del recetario.</p>
+      </div>
+      <div class="print-body">
+        <div class="print-image"><img src="media/receta-12.png?v=1784064212999" alt="Milanesas de carne"></div>
+        
+        <section>
+  <h2 class="section-title">Ingredientes</h2>
+  <ul class="ingredients"><li class="ingredient">
+  <span class="ingredient-amount">800 gr</span>
+  <span class="ingredient-name">Nalga cortada para milanesa<span class="ingredient-note"></span></span>
+</li><li class="ingredient">
+  <span class="ingredient-amount">3</span>
+  <span class="ingredient-name">huevos<span class="ingredient-note"></span></span>
+</li><li class="ingredient">
+  <span class="ingredient-amount">2</span>
+  <span class="ingredient-name">dientes de ajo<span class="ingredient-note"></span></span>
+</li><li class="ingredient">
+  <span class="ingredient-amount">3 cdas</span>
+  <span class="ingredient-name">perejil picado fino<span class="ingredient-note"></span></span>
+</li><li class="ingredient">
+  <span class="ingredient-amount">1 cda</span>
+  <span class="ingredient-name">mostaza<span class="ingredient-note"></span></span>
+</li><li class="ingredient">
+  <span class="ingredient-amount">1 cda</span>
+  <span class="ingredient-name">sal fina<span class="ingredient-note"></span></span>
+</li><li class="ingredient">
+  <span class="ingredient-amount">1/2 cdita</span>
+  <span class="ingredient-name">pimienta<span class="ingredient-note"></span></span>
+</li><li class="ingredient">
+  <span class="ingredient-amount">300 gr</span>
+  <span class="ingredient-name">pan rallado aproximadamente<span class="ingredient-note"></span></span>
+</li><li class="ingredient">
+  <span class="ingredient-amount"></span>
+  <span class="ingredient-name">aceite para freir<span class="ingredient-note"></span></span>
+</li><li class="ingredient">
+  <span class="ingredient-amount"></span>
+  <span class="ingredient-name">limon<span class="ingredient-note"></span></span>
+</li></ul>
+</section>
+        <section>
+  <h2 class="section-title">Preparación paso a paso</h2>
+  <div class="steps"><article class="step">
+  <div class="step-image"><img src="media/receta-12-paso-01.png?v=1784064212999" alt="Paso 1 de Milanesas de carne"></div>
+  <div>
+    <h3>Paso 1</h3>
+    <p>Retirar nervios o exceso de grasa. Si los bifes no son parejos, colocarlos entre dos l&#225;minas de film y golpearlos suavemente hasta dejarlos de unos 5 mm de espesor. Secarlos con papel de cocina.</p>
+  </div>
+</article><article class="step">
+  <div class="step-image"><img src="media/receta-12-paso-02.png?v=1784064212999" alt="Paso 2 de Milanesas de carne"></div>
+  <div>
+    <h3>Paso 2</h3>
+    <p>Batir los huevos en una fuente amplia. Incorporar el ajo, el perejil, la mostaza, la sal y la pimienta.</p>
+  </div>
+</article><article class="step">
+  <div class="step-image"><img src="media/receta-12-paso-03.png?v=1784064212999" alt="Paso 3 de Milanesas de carne"></div>
+  <div>
+    <h3>Paso 3</h3>
+    <p>Introducir los bifes en la mezcla, moverlos para que queden completamente cubiertos y dejarlos reposar 15 minutos en la heladera.</p>
+  </div>
+</article><article class="step">
+  <div class="step-image"><img src="media/receta-12-paso-04.png?v=1784064212999" alt="Paso 4 de Milanesas de carne"></div>
+  <div>
+    <h3>Paso 4</h3>
+    <p>Colocar el pan rallado en otra fuente. Escurrir cada bife, pasarlo por el pan rallado y presionar con las palmas y las yemas de los dedos para que la cobertura se adhiera de manera uniforme. Sacudir con suavidad el excedente.</p>
+  </div>
+</article><article class="step">
+  <div class="step-image"><img src="media/receta-12-paso-05.png?v=1784064212999" alt="Paso 5 de Milanesas de carne"></div>
+  <div>
+    <h3>Paso 5</h3>
+    <p>Acomodarlas sin amontonar, taparlas y llevarlas a la heladera durante 15 minutos. Este descanso ayuda a que el empanado permanezca adherido durante la cocci&#243;n.</p>
+  </div>
+</article><article class="step">
+  <div class="step-image"><img src="media/receta-12-paso-06.png?v=1784064212999" alt="Paso 6 de Milanesas de carne"></div>
+  <div>
+    <h3>Paso 6</h3>
+    <p>Calentar en una sart&#233;n amplia una capa de 1,5 a 2 cm de aceite, idealmente a 170-180 &#176;C. Fre&#237;r pocas milanesas por tanda, aproximadamente 1 a 2 minutos por lado, hasta que est&#233;n doradas y la carne est&#233; cocida. Evitar llenar la sart&#233;n para que el aceite no pierda temperatura.</p>
+  </div>
+</article><article class="step">
+  <div class="step-image"><img src="media/receta-12-paso-07.png?v=1784064212999" alt="Paso 7 de Milanesas de carne"></div>
+  <div>
+    <h3>Paso 7</h3>
+    <p>Retirar con pinza o espumadera y dejar escurrir sobre una rejilla; si no hay rejilla, usar papel absorbente sin apilarlas. Servir enseguida con gajos de lim&#243;n y la guarnici&#243;n elegida.</p>
+  </div>
+</article></div>
+</section>
+        <footer class="print-footer">
+          <span>Tu propio cuaderno de Recetas</span>
+          <span>cuadernoderecetas.com.ar</span>
+        </footer>
+      </div>
+    </article>
+    <div class="actions">
+      <button class="action primary" type="button" onclick="printRecipe()">Imprimir receta / guardar PDF</button>
+    </div>
+  </main>
+  <script>
+    function printRecipe(){
+      const sheet=document.querySelector('#printSheet');
+      sheet.style.setProperty('--print-scale','1');
+      requestAnimationFrame(()=>{const printableHeight=1040,height=sheet.scrollHeight;const scale=height<=1280?Math.max(.86,Math.min(1,printableHeight/Math.max(height,1))):1;sheet.style.setProperty('--print-scale',scale.toFixed(3));requestAnimationFrame(()=>window.print())});
+    }
+  </script>
+</body>
+</html>
