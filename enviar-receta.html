@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Enviar receta - Cuaderno de Recetas</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1784067119841">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1784067119841">
-<meta property="og:image" content="assets/logo-icon-512.png?v=1784067119841">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1784068383132">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1784068383132">
+<meta property="og:image" content="assets/logo-icon-512.png?v=1784068383132">
 
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
@@ -15,13 +15,13 @@
     header{padding:34px 20px 16px;text-align:center}.logo{display:block;width:min(520px,88vw);height:auto;margin:0 auto 18px;border-radius:16px;box-shadow:0 10px 28px #3b210f10}.brand{font-weight:900;letter-spacing:.18em;color:var(--green)}
     main{max-width:900px;margin:0 auto 64px;padding:0 20px}.panel{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:0 18px 54px var(--shadow)}
     .eyebrow{margin:0 0 10px;color:var(--terracotta);font-size:12px;font-weight:900;letter-spacing:.16em}h1{font:700 clamp(34px,7vw,56px)/1 Georgia,serif;margin:0 0 12px}.lead{color:var(--muted);line-height:1.65;margin:0 0 22px}
-    form{display:grid;gap:16px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:grid;gap:6px;font-weight:800}input,textarea{width:100%;border:1px solid var(--line);border-radius:16px;background:white;color:var(--ink);font:inherit;padding:12px 14px}textarea{min-height:120px;resize:vertical}.full{grid-column:1/-1}.hint{color:var(--muted);font-size:13px;font-weight:500}.notice{padding:12px 14px;border:1px dashed #c9a38b;border-radius:16px;background:#fff7ea;color:#7a5136;line-height:1.5}
+    form{display:grid;gap:16px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:grid;gap:6px;font-weight:800}input,textarea{width:100%;border:1px solid var(--line);border-radius:16px;background:white;color:var(--ink);font:inherit;padding:12px 14px}textarea{min-height:120px;resize:vertical}.full{grid-column:1/-1}.hint{color:var(--muted);font-size:13px;font-weight:500;line-height:1.45}.limits{margin:0;padding:12px 14px;border-radius:16px;background:#f8efe2;color:#765943;font-size:13px;line-height:1.5}.notice{padding:12px 14px;border:1px dashed #c9a38b;border-radius:16px;background:#fff7ea;color:#7a5136;line-height:1.5}
     .actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:4px}button,a.button{border:0;border-radius:999px;background:var(--green);color:white;padding:12px 20px;font-weight:900;font:inherit;cursor:pointer;text-decoration:none}button:disabled{opacity:.5;cursor:not-allowed}.button.secondary{background:#f7ead7;color:var(--green);border:1px solid #c7c99f}.status{color:var(--muted);font-size:14px}.success{color:#2f6b3f;font-weight:800}.error{color:#a83232;font-weight:800}
     @media(max-width:720px){.grid{grid-template-columns:1fr}.panel{padding:22px}}
   </style>
 </head>
 <body>
-  <header><img class="logo" src="assets/logo-header.png?v=1784067119841" alt="Tu propio cuaderno de Recetas"></header>
+  <header><img class="logo" src="assets/logo-header.png?v=1784068383132" alt="Tu propio cuaderno de Recetas"></header>
   <main>
     <section class="panel">
       <p class="eyebrow">COMPARTIR RECETA</p>
@@ -35,10 +35,11 @@
           <label class="full">Resumen corto <textarea name="summary" maxlength="600" placeholder="Ejemplo: torta fácil para merienda, sin batidora..."></textarea></label>
           <label class="full">Ingredientes <textarea name="ingredients" maxlength="4000" required placeholder="Podés escribir medidas exactas o caseras: 2 tazas, 1 pote, a ojo..."></textarea></label>
           <label class="full">Preparación / pasos <textarea name="steps" maxlength="8000" required placeholder="Separá los pasos como te salga. Después los acomodamos en el sistema."></textarea></label>
-          <label>Red social o web <input name="profile_link" maxlength="300" placeholder="YouTube, TikTok, Instagram..."></label>
+          <label>Red social o web <input name="profile_link" maxlength="300" inputmode="url" placeholder="https://youtube.com/..."></label>
           <label>Origen de la receta <input name="source" maxlength="300" placeholder="Propia, familiar, enlace..."></label>
         </div>
         <p class="hint">Por seguridad, en esta primera etapa no se suben imágenes desde el formulario. Las imágenes las agregamos después con control y revisión.</p>
+        <p class="limits">Limites de seguridad: texto total moderado, sin archivos adjuntos, enlaces preferentemente con https:// y envios limitados por tiempo para evitar spam.</p>
         <div class="cf-turnstile" data-sitekey="0x4AAAAAAD1x8qPysBE8VunM"></div>
         <div class="actions">
           <button type="submit" >Enviar para revisión</button>
@@ -55,6 +56,11 @@
       event.preventDefault();
       if(!endpoint){status.textContent='Falta configurar el endpoint seguro.';status.className='status error';return}
       const data=Object.fromEntries(new FormData(form).entries());
+      if(data.profile_link && !/^https:\/\/\S+$/i.test(data.profile_link.trim())){
+        status.textContent='El enlace debe empezar con https://';
+        status.className='status error';
+        return;
+      }
       data.source_page=location.href;
       status.textContent='Enviando...';status.className='status';
       try{
