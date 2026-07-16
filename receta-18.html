@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Aros de cebolla</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1784235663059">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1784235663059">
-<meta property="og:image" content="assets/logo-icon-512.png?v=1784235663059">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1784236193483">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1784236193483">
+<meta property="og:image" content="assets/logo-icon-512.png?v=1784236193483">
 
   <style>
     :root{--ink:#3a210f;--muted:#746456;--green:#4F9B68;--favorite:#D35F4B;--sage:#e4ead2;--terracotta:#d36b43;--cream:#fff8ec;--paper:#fffdf8;--line:#eadcc7;--shadow:#3b210f14}
     *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 12% 0,#fff2d9 0 22%,transparent 44%),linear-gradient(135deg,#fff9ef,#f7ecdc);color:var(--ink);font-family:Segoe UI,system-ui,sans-serif;font-size:16px}
     .page{max-width:960px;margin:0 auto;padding:38px 22px 64px}.intro{text-align:center;margin-bottom:24px}.intro p{color:var(--muted);line-height:1.65}.recipe-page-logo{display:block;width:min(520px,88vw);height:auto;margin:0 auto 18px;border-radius:14px;box-shadow:0 10px 28px #3b210f10}
     .ad-placeholder{display:grid;place-items:center;min-height:110px;margin:0 0 24px;border:1px dashed #c9a38b;border-radius:20px;background:linear-gradient(135deg,#fffdf8,#f6ead8);color:#8a6d59;font-size:13px;font-weight:700;letter-spacing:.08em;text-align:center;text-transform:uppercase}
-    .preview{background:var(--paper);border:1px solid var(--line);border-radius:28px;box-shadow:0 18px 54px var(--shadow);overflow:hidden}.preview-header{padding:30px 32px 26px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#fffdf8,#fff1dc)}
+    .preview{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:28px;box-shadow:0 18px 54px var(--shadow);overflow:hidden}.preview-header{padding:30px 94px 26px 32px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#fffdf8,#fff1dc)}.favorite-button{position:absolute;z-index:2;right:20px;top:20px;width:50px;height:50px;border:1px solid var(--line);border-radius:50%;background:#fffdf8ed;color:var(--favorite);font:700 31px/1 Arial,sans-serif;cursor:pointer;box-shadow:0 6px 18px #3b210f22}.favorite-button:hover{transform:scale(1.06)}.favorite-button.is-favorite{background:var(--favorite);border-color:var(--favorite);color:#fff}.favorite-button:disabled{opacity:.65;cursor:wait}
     .eyebrow{margin:0 0 8px;color:var(--terracotta);font-size:11px;font-weight:900;letter-spacing:.16em}.preview h1{font:700 40px/1.05 Georgia,serif;margin:0 0 12px}.preview-author{margin:-2px 0 12px;color:var(--green);font-size:14px;font-weight:900}.summary{color:var(--muted);line-height:1.58;white-space:pre-line}
     .print-body{padding:26px 32px 32px}.print-image{height:280px;margin-bottom:22px;border-radius:22px;background:#eadfce;overflow:hidden;box-shadow:inset 0 0 0 1px #ffffff80}.print-image img{width:100%;height:100%;object-fit:cover}.placeholder{display:grid;place-items:center;background:linear-gradient(135deg,#e4ead2,#f6dfc2)}.placeholder span{font:700 74px Georgia;color:var(--green)}
     .section-title{font:700 28px/1.1 Georgia,serif;margin:26px 0 14px;color:var(--ink)}dl{margin:0}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}.detail{padding:12px 0;border-top:1px dashed var(--line)}dt{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}dd{margin:7px 0 0;line-height:1.6;white-space:pre-line}a{color:#287345}
@@ -25,7 +25,7 @@
     @page{size:A4 portrait;margin:10mm}
     @media print{
       html,body{width:190mm;min-height:277mm;background:#fff;color:#111;font-size:10.5pt}
-      .intro,.ad-placeholder,.actions{display:none!important}.page{max-width:none;margin:0;padding:0}.preview{border:0;border-radius:0;box-shadow:none;overflow:visible;zoom:var(--print-scale,1)}.preview-header{padding:0 0 4mm;border-bottom:0}.preview h1{font-size:24pt;margin-bottom:3mm}.summary{margin:0;line-height:1.35}.print-body{padding:0}.print-image{float:left;width:52mm;height:46mm;border-radius:4mm;margin:0 7mm 4mm 0}.section-title{clear:both;font-size:14pt;margin:4mm 0 2mm}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 7mm}.detail{break-inside:avoid;padding:1.7mm 0}dt{font-size:8pt}dd{font-size:9.5pt;line-height:1.28}.ingredients{grid-template-columns:1fr;gap:0}.ingredient{break-inside:avoid;display:block;padding:1.2mm 0;border:0;border-top:1px solid #eee;border-radius:0;background:#fff}.ingredient-amount{display:inline;color:#111;font-weight:800}.ingredient-amount:not(:empty)::after{content:" - "}.ingredient-name{display:inline}.ingredient-note{display:inline;color:#555}.ingredient-note:not(:empty)::before{content:" ("}.ingredient-note:not(:empty)::after{content:")"}.steps{gap:2mm}.step{break-inside:avoid;grid-template-columns:34mm 1fr;gap:4mm;padding:2mm 0;border:0;border-top:1px solid #ddd;border-radius:0;background:#fff}.step.no-image{grid-template-columns:1fr}.step-image{height:28mm;border-radius:2mm}.step h3{font-size:8.5pt;margin-bottom:1mm}.step p{font-size:9.5pt;line-height:1.28}a{color:#111;text-decoration:none}
+      .intro,.ad-placeholder,.actions,.favorite-button{display:none!important}.page{max-width:none;margin:0;padding:0}.preview{border:0;border-radius:0;box-shadow:none;overflow:visible;zoom:var(--print-scale,1)}.preview-header{padding:0 0 4mm;border-bottom:0}.preview h1{font-size:24pt;margin-bottom:3mm}.summary{margin:0;line-height:1.35}.print-body{padding:0}.print-image{float:left;width:52mm;height:46mm;border-radius:4mm;margin:0 7mm 4mm 0}.section-title{clear:both;font-size:14pt;margin:4mm 0 2mm}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 7mm}.detail{break-inside:avoid;padding:1.7mm 0}dt{font-size:8pt}dd{font-size:9.5pt;line-height:1.28}.ingredients{grid-template-columns:1fr;gap:0}.ingredient{break-inside:avoid;display:block;padding:1.2mm 0;border:0;border-top:1px solid #eee;border-radius:0;background:#fff}.ingredient-amount{display:inline;color:#111;font-weight:800}.ingredient-amount:not(:empty)::after{content:" - "}.ingredient-name{display:inline}.ingredient-note{display:inline;color:#555}.ingredient-note:not(:empty)::before{content:" ("}.ingredient-note:not(:empty)::after{content:")"}.steps{gap:2mm}.step{break-inside:avoid;grid-template-columns:34mm 1fr;gap:4mm;padding:2mm 0;border:0;border-top:1px solid #ddd;border-radius:0;background:#fff}.step.no-image{grid-template-columns:1fr}.step-image{height:28mm;border-radius:2mm}.step h3{font-size:8.5pt;margin-bottom:1mm}.step p{font-size:9.5pt;line-height:1.28}a{color:#111;text-decoration:none}
       .print-footer{break-inside:avoid;margin-top:5mm;padding-top:2mm;font-size:8.5pt;color:#555;border-top:1px solid #ddd}
     }
   </style>
@@ -33,7 +33,7 @@
 <body>
   <main class="page">
     <section class="intro">
-      <img class="recipe-page-logo" src="assets/logo-header.png?v=1784235663059" alt="Tu propio cuaderno de Recetas">
+      <img class="recipe-page-logo" src="assets/logo-header.png?v=1784236193483" alt="Tu propio cuaderno de Recetas">
       <p class="eyebrow">RECETA COMPLETA</p>
       <h1>Aros de cebolla</h1>
       <p>Revisá la receta completa y, si querés guardarla, usá el botón de abajo para imprimir o descargar como PDF.</p>
@@ -42,6 +42,7 @@
   <span>Espacio reservado para publicidad</span>
 </aside>
     <article class="preview" id="printSheet">
+      <button class="favorite-button" id="favoriteButton" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite()">♡</button>
       <div class="preview-header">
         <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
         <h1>Aros de cebolla</h1>
@@ -49,7 +50,7 @@
         <p class="summary">Aros de cebolla fritos, dorados y crocantes, con una masa liviana preparada con harina, almid&#243;n y agua con gas bien fr&#237;a. Ideales como entrada, picada o acompa&#241;amiento.</p>
       </div>
       <div class="print-body">
-        <div class="print-image"><img src="media/receta-18.png?v=1784235663059" alt="Aros de cebolla"></div>
+        <div class="print-image"><img src="media/receta-18.png?v=1784236193483" alt="Aros de cebolla"></div>
         <section>
   <h2 class="section-title">Datos rápidos</h2>
   <dl class="details-grid"><div class="detail"><dt>Introducci&#243;n / resumen</dt><dd>Aros de cebolla fritos, dorados y crocantes, con una masa liviana preparada con harina, almid&#243;n y agua con gas bien fr&#237;a. Ideales como entrada, picada o acompa&#241;amiento.</dd></div><div class="detail"><dt>Dificultad</dt><dd>Media</dd></div><div class="detail"><dt>Etiquetas</dt><dd>fritura, cebolla, entrada, picada, crocante, acompa&#241;amiento</dd></div><div class="detail"><dt>Porciones</dt><dd>4 porciones</dd></div><div class="detail"><dt>Tiempo total</dt><dd>45 min</dd></div></dl>
@@ -94,37 +95,37 @@
         <section>
   <h2 class="section-title">Preparación paso a paso</h2>
   <div class="steps"><article class="step">
-  <div class="step-image"><img src="media/receta-18-paso-01.png?v=1784235663059" alt="Paso 1 de Aros de cebolla"></div>
+  <div class="step-image"><img src="media/receta-18-paso-01.png?v=1784236193483" alt="Paso 1 de Aros de cebolla"></div>
   <div>
     <h3>Paso 1</h3>
     <p>Pelar las cebollas, cortarlas transversalmente en rodajas de 8 a 10 mm y separar con cuidado los aros. Reservar los centros peque&#241;os para otra preparaci&#243;n.</p>
   </div>
 </article><article class="step">
-  <div class="step-image"><img src="media/receta-18-paso-02.png?v=1784235663059" alt="Paso 2 de Aros de cebolla"></div>
+  <div class="step-image"><img src="media/receta-18-paso-02.png?v=1784236193483" alt="Paso 2 de Aros de cebolla"></div>
   <div>
     <h3>Paso 2</h3>
     <p>Mezclar 120 g de harina, almid&#243;n, polvo de hornear, sal y piment&#243;n. A&#241;adir el agua con gas y los hielos; unir apenas. Deben quedar algunos grumos y la masa tiene que permanecer muy fr&#237;a.</p>
   </div>
 </article><article class="step">
-  <div class="step-image"><img src="media/receta-18-paso-03.png?v=1784235663059" alt="Paso 3 de Aros de cebolla"></div>
+  <div class="step-image"><img src="media/receta-18-paso-03.png?v=1784236193483" alt="Paso 3 de Aros de cebolla"></div>
   <div>
     <h3>Paso 3</h3>
     <p>Secar los aros y pasarlos por las 2 cucharadas de harina. Sacudir bien el exceso.</p>
   </div>
 </article><article class="step">
-  <div class="step-image"><img src="media/receta-18-paso-04.png?v=1784235663059" alt="Paso 4 de Aros de cebolla"></div>
+  <div class="step-image"><img src="media/receta-18-paso-04.png?v=1784236193483" alt="Paso 4 de Aros de cebolla"></div>
   <div>
     <h3>Paso 4</h3>
     <p>Calentar 4 a 5 cm de aceite a 175-180 &#176;C. Sumergir cada aro en la masa fr&#237;a y dejar escurrir el excedente.</p>
   </div>
 </article><article class="step">
-  <div class="step-image"><img src="media/receta-18-paso-05.png?v=1784235663059" alt="Paso 5 de Aros de cebolla"></div>
+  <div class="step-image"><img src="media/receta-18-paso-05.png?v=1784236193483" alt="Paso 5 de Aros de cebolla"></div>
   <div>
     <h3>Paso 5</h3>
     <p>Fre&#237;r en tandas peque&#241;as durante 2 a 3 minutos, gir&#225;ndolos una vez, hasta que est&#233;n dorados y crocantes.</p>
   </div>
 </article><article class="step">
-  <div class="step-image"><img src="media/receta-18-paso-06.png?v=1784235663059" alt="Paso 6 de Aros de cebolla"></div>
+  <div class="step-image"><img src="media/receta-18-paso-06.png?v=1784236193483" alt="Paso 6 de Aros de cebolla"></div>
   <div>
     <h3>Paso 6</h3>
     <p>Escurrir sobre una rejilla y salar enseguida.</p>
@@ -144,7 +145,6 @@
       </div>
     </article>
     <div class="actions">
-      <button class="action favorite" id="favoriteButton" type="button" onclick="toggleFavorite()">♡ Guardar favorito</button>
       <button class="action primary" type="button" onclick="printRecipe()">Imprimir receta / guardar PDF</button>
     </div>
   </main>
@@ -153,7 +153,7 @@
     const endpoint="https://api.cuadernoderecetas.com.ar/",recipeId=18,favoriteButton=document.querySelector('#favoriteButton'),favoriteDialog=document.querySelector('#favoriteDialog');let authenticated=false,isFavorite=false;
     loadFavorite();
     async function loadFavorite(){if(!endpoint)return;try{const me=await fetch(endpoint.replace(/\/$/,'')+'/auth/me',{credentials:'include'}),session=await me.json();authenticated=Boolean(session.authenticated);if(!authenticated)return;const response=await fetch(endpoint.replace(/\/$/,'')+'/favorites',{credentials:'include'}),data=await response.json();isFavorite=(data.favorites||[]).map(Number).includes(recipeId);updateFavorite()}catch{}}
-    function updateFavorite(){favoriteButton.classList.toggle('is-favorite',isFavorite);favoriteButton.textContent=isFavorite?'♥ Guardado':'♡ Guardar favorito'}
+    function updateFavorite(){favoriteButton.classList.toggle('is-favorite',isFavorite);favoriteButton.textContent=isFavorite?'♥':'♡';favoriteButton.setAttribute('aria-pressed',String(isFavorite));favoriteButton.setAttribute('aria-label',isFavorite?'Quitar de favoritos':'Guardar en favoritos')}
     async function toggleFavorite(){if(!authenticated){favoriteDialog.classList.remove('hidden');return}favoriteButton.disabled=true;try{const response=await fetch(endpoint.replace(/\/$/,'')+'/favorites/'+recipeId,{method:isFavorite?'DELETE':'POST',credentials:'include'});if(response.status===401){authenticated=false;favoriteDialog.classList.remove('hidden');return}if(!response.ok)throw new Error();isFavorite=!isFavorite;updateFavorite()}finally{favoriteButton.disabled=false}}
     function closeFavoriteDialog(){favoriteDialog.classList.add('hidden')}
     function printRecipe(){
