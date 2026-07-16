@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Cuaderno de Recetas</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1784208871666">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1784208871666">
-<meta property="og:image" content="assets/logo-icon-512.png?v=1784208871666">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1784235663059">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1784235663059">
+<meta property="og:image" content="assets/logo-icon-512.png?v=1784235663059">
 
   <style>
-    :root{--ink:#3a210f;--muted:#746456;--green:#4F9B68;--sage:#e4ead2;--terracotta:#d36b43;--pale:#f4eadb;--paper:#fff8ec;--card:#fffdf8;--line:#eadcc7;--shadow:#3b210f14}
+    :root{--ink:#3a210f;--muted:#746456;--green:#4F9B68;--favorite:#D35F4B;--sage:#e4ead2;--terracotta:#d36b43;--pale:#f4eadb;--paper:#fff8ec;--card:#fffdf8;--line:#eadcc7;--shadow:#3b210f14}
     *{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 8% 0,#fff1d6 0 20%,transparent 42%),linear-gradient(135deg,#fff9ef,#f7ecdc);color:var(--ink);font-family:Segoe UI,system-ui,sans-serif;font-size:16px}
     header{padding:72px 6vw 54px;background:linear-gradient(135deg,#fff6e7,#f4e4ce 48%,#edf0dd);border-bottom:1px solid var(--line);position:relative;overflow:hidden;text-align:center}
     header:after{content:"";position:absolute;right:-90px;top:-110px;width:330px;height:330px;border-radius:50%;background:#ffffff50;box-shadow:-70px 120px 0 #d36b4314}
@@ -19,7 +19,7 @@
     .search{display:flex;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:999px;box-shadow:0 16px 44px var(--shadow);padding:9px 18px}
     .search input{width:100%;border:0;outline:0;padding:12px;font-size:17px;color:var(--ink)}.count{white-space:nowrap;color:var(--muted);font-size:14px}
     main{max-width:1180px;margin:auto;padding:0 24px 70px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:24px}
-    .card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:26px;box-shadow:0 10px 30px var(--shadow);transition:.2s}.clickable-card{cursor:pointer}.clickable-card:focus{outline:3px solid #d9dfbf;outline-offset:4px}
+    .card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:26px;box-shadow:0 10px 30px var(--shadow);transition:.2s}.clickable-card{cursor:pointer}.clickable-card:focus{outline:3px solid #d9dfbf;outline-offset:4px}.favorite-button{position:absolute;z-index:2;right:14px;top:14px;width:46px;height:46px;border:1px solid #eadcc7;border-radius:50%;background:#fffdf8ed;color:var(--favorite);font:700 29px/1 Arial,sans-serif;cursor:pointer;box-shadow:0 6px 18px #3b210f22}.favorite-button:hover{transform:scale(1.06)}.favorite-button.is-favorite{background:var(--favorite);border-color:var(--favorite);color:#fff}
     .card:hover{transform:translateY(-4px);box-shadow:0 18px 44px #3a26151f}.image{height:230px;background:#eadfce;overflow:hidden}.image img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}.card:hover .image img{transform:scale(1.035)}
     .placeholder{display:grid;place-items:center;background:linear-gradient(135deg,#e4ead2,#f6dfc2)}.placeholder span{font:700 74px Georgia;color:var(--green)}
     .content{padding:24px 24px 26px}.eyebrow{margin:0 0 8px;color:var(--terracotta);font-size:11px;font-weight:900;letter-spacing:.16em}.content h2{font:700 30px/1.08 Georgia,serif;margin:0 0 12px;color:var(--ink)}
@@ -29,7 +29,7 @@
     .ad-placeholder{display:grid;place-items:center;min-height:92px;border:1px dashed #c9a38b;border-radius:20px;background:linear-gradient(135deg,#fffdf8,#f6ead8);color:#8a6d59;font-size:13px;font-weight:700;letter-spacing:.08em;text-align:center;text-transform:uppercase}
     .toolbar+.ad-placeholder{max-width:1180px;margin:-14px auto 34px}.grid>.ad-placeholder{min-height:100%;padding:24px}
     .empty{text-align:center;padding:80px 20px;background:#fffdf8;border:1px dashed #b9a88f;border-radius:28px}.empty span{font-size:52px}.empty h2{font:700 34px Georgia;margin:12px}.empty p{color:var(--muted)}
-    .hidden{display:none}@media(max-width:600px){header{padding-top:42px}.site-nav{gap:8px}.site-nav a{flex:1 1 42%;padding:9px 10px}.grid{grid-template-columns:1fr}.count{display:none}}
+    .favorite-dialog{position:fixed;z-index:20;inset:0;display:grid;place-items:center;padding:22px;background:#2d1b1099}.favorite-dialog.hidden{display:none}.favorite-dialog-card{width:min(420px,100%);padding:26px;border:1px solid var(--line);border-radius:24px;background:var(--card);box-shadow:0 24px 70px #1e110d55;text-align:center}.favorite-dialog-card p{margin:0 0 20px;font-size:18px;font-weight:800;line-height:1.45}.dialog-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.dialog-actions a,.dialog-actions button{min-height:42px;padding:10px 17px;border:0;border-radius:999px;font-weight:850;cursor:pointer;text-decoration:none}.dialog-actions a{background:var(--green);color:#fff}.dialog-actions button{background:#f7ead7;color:var(--green);border:1px solid #c7c99f}.hidden{display:none}@media(max-width:600px){header{padding-top:42px}.site-nav{gap:8px}.site-nav a{flex:1 1 42%;padding:9px 10px}.grid{grid-template-columns:1fr}.count{display:none}}
     @page{size:A4 portrait;margin:10mm}
     @media print{
       html,body{width:190mm;min-height:277mm;background:#fff;color:#111;font-size:10.5pt}
@@ -55,11 +55,11 @@
 </head>
 <body>
   <header><picture class="brand-logo">
-  <source media="(max-width:640px)" srcset="assets/logo-mobile.png?v=1784208871666">
-  <img src="assets/logo-header.png?v=1784208871666" alt="Tu propio cuaderno de Recetas">
+  <source media="(max-width:640px)" srcset="assets/logo-mobile.png?v=1784235663059">
+  <img src="assets/logo-header.png?v=1784235663059" alt="Tu propio cuaderno de Recetas">
 </picture><h1></h1><p>Elige, crea, y colecciona tus recetas preferidas.</p><nav class="site-nav" aria-label="Secciones principales"><a class="primary" href="index.html">Recetas</a><a href="ayuda.html">Ayuda</a><a href="mi-cuenta.html">Mi cuenta</a></nav></header>
   <div class="toolbar"><label class="search">🔎<input id="search" type="search" placeholder="Buscar recetas, ingredientes o ideas…" autofocus><span class="count" id="count">11 publicaciones</span></label></div>
-  <main><section class="grid" id="recipes"><article class="card clickable-card" data-search="R00010 Aros de cebolla Aros de cebolla fritos, dorados y crocantes, con una masa liviana preparada con harina, almid&#243;n y agua con gas bien fr&#237;a. Ideales como entrada, picada o acompa&#241;amiento.  Fernando I  Media publicada fritura, cebolla, entrada, picada, crocante, acompa&#241;amiento  2 unidades - cebollas grandes y firmes
+  <main><section class="grid" id="recipes"><article class="card clickable-card" data-recipe-id="18" data-search="R00010 Aros de cebolla Aros de cebolla fritos, dorados y crocantes, con una masa liviana preparada con harina, almid&#243;n y agua con gas bien fr&#237;a. Ideales como entrada, picada o acompa&#241;amiento.  Fernando I  Media publicada fritura, cebolla, entrada, picada, crocante, acompa&#241;amiento  2 unidades - cebollas grandes y firmes
 120 g - harina 0000
 2 cucharadas - harina extra para enharinar
 40 g - almid&#243;n de ma&#237;z
@@ -81,8 +81,9 @@ Fre&#237;r en tandas peque&#241;as durante 2 a 3 minutos, gir&#225;ndolos una ve
 
 Escurrir sobre una rejilla y salar enseguida.
 
-Servir calientes. Consejo: no batir de m&#225;s la masa y no llenar la olla; los grumos, el fr&#237;o y la temperatura estable ayudan a lograr una fritura liviana. 45 min False" tabindex="0" role="link" onclick="window.open('receta-18.html?v=1784208871666','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-18.html?v=1784208871666','_blank','noopener');}">
-  <div class="image"><img src="media/receta-18.png?v=1784208871666" alt="Aros de cebolla"></div>
+Servir calientes. Consejo: no batir de m&#225;s la masa y no llenar la olla; los grumos, el fr&#237;o y la temperatura estable ayudan a lograr una fritura liviana. 45 min False" tabindex="0" role="link" onclick="window.open('receta-18.html?v=1784235663059','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-18.html?v=1784235663059','_blank','noopener');}">
+  <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
+  <div class="image"><img src="media/receta-18.png?v=1784235663059" alt="Aros de cebolla"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Aros de cebolla</h2>
@@ -90,7 +91,7 @@ Servir calientes. Consejo: no batir de m&#225;s la masa y no llenar la olla; los
     <p class="summary">Aros de cebolla fritos, dorados y crocantes, con una masa liviana preparada con harina, almid&#243;n y agua con gas bien fr&#237;a. Ideales como entrada, picada o acompa&#241;amiento.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-search="R00003 Bondiola desmenuzada   Fernando   publicada   bondiola
+</article><article class="card clickable-card" data-recipe-id="8" data-search="R00003 Bondiola desmenuzada   Fernando   publicada   bondiola
 morron
 cebolla
 ajo
@@ -102,8 +103,9 @@ cerveza  los ingredientes
 
 dorar la bondiola
 
-cocinar por 3 horas  False" tabindex="0" role="link" onclick="window.open('receta-8.html?v=1784208871666','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-8.html?v=1784208871666','_blank','noopener');}">
-  <div class="image"><img src="media/receta-8.png?v=1784208871666" alt="Bondiola desmenuzada"></div>
+cocinar por 3 horas  False" tabindex="0" role="link" onclick="window.open('receta-8.html?v=1784235663059','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-8.html?v=1784235663059','_blank','noopener');}">
+  <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
+  <div class="image"><img src="media/receta-8.png?v=1784235663059" alt="Bondiola desmenuzada"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Bondiola desmenuzada</h2>
@@ -111,7 +113,7 @@ cocinar por 3 horas  False" tabindex="0" role="link" onclick="window.open('recet
     <p class="summary">Una nueva publicaci&#243;n del recetario.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-search="R00007 Bruschettas de tomate y albahaca Bruschettas cl&#225;sicas de tomate y albahaca sobre pan tostado, con ajo, aceite de oliva y un toque de aceto. Una entrada simple, fresca y muy pr&#225;ctica para preparar en pocos minutos.  Fernando I  F&#225;cil publicada entrada, pan, tomate, albahaca, vegetariana, r&#225;pida  8 unidades - rodajas de pan de campo, de 1,5 cm
+</article><article class="card clickable-card" data-recipe-id="15" data-search="R00007 Bruschettas de tomate y albahaca Bruschettas cl&#225;sicas de tomate y albahaca sobre pan tostado, con ajo, aceite de oliva y un toque de aceto. Una entrada simple, fresca y muy pr&#225;ctica para preparar en pocos minutos.  Fernando I  F&#225;cil publicada entrada, pan, tomate, albahaca, vegetariana, r&#225;pida  8 unidades - rodajas de pan de campo, de 1,5 cm
 350 g - tomates cherry o tomates perita firmes
 1 unidad - diente de ajo para el tomate
 1 unidad - diente de ajo entero para frotar el pan
@@ -130,8 +132,9 @@ Frotar suavemente el pan caliente con el diente de ajo entero.
 
 Distribuir el tomate justo antes de servir y terminar con pimienta y unas hojas de albahaca.
 
-Consejo: escurrir el tomate evita que el pan pierda crocancia. Conviene armar &#250;nicamente lo que se va a comer en el momento. 33 min False" tabindex="0" role="link" onclick="window.open('receta-15.html?v=1784208871666','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-15.html?v=1784208871666','_blank','noopener');}">
-  <div class="image"><img src="media/receta-15.png?v=1784208871666" alt="Bruschettas de tomate y albahaca"></div>
+Consejo: escurrir el tomate evita que el pan pierda crocancia. Conviene armar &#250;nicamente lo que se va a comer en el momento. 33 min False" tabindex="0" role="link" onclick="window.open('receta-15.html?v=1784235663059','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-15.html?v=1784235663059','_blank','noopener');}">
+  <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
+  <div class="image"><img src="media/receta-15.png?v=1784235663059" alt="Bruschettas de tomate y albahaca"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Bruschettas de tomate y albahaca</h2>
@@ -139,13 +142,14 @@ Consejo: escurrir el tomate evita que el pan pierda crocancia. Conviene armar &#
     <p class="summary">Bruschettas cl&#225;sicas de tomate y albahaca sobre pan tostado, con ajo, aceite de oliva y un toque de aceto. Una entrada simple, fresca y muy pr&#225;ctica para preparar en pocos minutos.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-search="R00001 Budin Budin clasico  Fernando   publicada   5 - huevos
+</article><article class="card clickable-card" data-recipe-id="6" data-search="R00001 Budin Budin clasico  Fernando   publicada   5 - huevos
 500 gr - azucar  azucar y manteca
 
 huevos
 
-hornear  False" tabindex="0" role="link" onclick="window.open('receta-6.html?v=1784208871666','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-6.html?v=1784208871666','_blank','noopener');}">
-  <div class="image"><img src="media/receta-6.jpg?v=1784208871666" alt="Budin"></div>
+hornear  False" tabindex="0" role="link" onclick="window.open('receta-6.html?v=1784235663059','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-6.html?v=1784235663059','_blank','noopener');}">
+  <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
+  <div class="image"><img src="media/receta-6.jpg?v=1784235663059" alt="Budin"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Budin</h2>
@@ -153,7 +157,7 @@ hornear  False" tabindex="0" role="link" onclick="window.open('receta-6.html?v=1
     <p class="summary">Budin clasico</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-search="R00002 Budin de manzana, banana, avena y pasas   Fernando   publicada   4 - manzanas
+</article><article class="card clickable-card" data-recipe-id="7" data-search="R00002 Budin de manzana, banana, avena y pasas   Fernando   publicada   4 - manzanas
 2 - bananas
 200 cc - agua
 4 - huevos
@@ -163,8 +167,9 @@ pasas de uva  medir los ingredientes
 
 mezclar
 
-Hornear 40 minutos a 180 grados  False" tabindex="0" role="link" onclick="window.open('receta-7.html?v=1784208871666','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-7.html?v=1784208871666','_blank','noopener');}">
-  <div class="image"><img src="media/receta-7.png?v=1784208871666" alt="Budin de manzana, banana, avena y pasas"></div>
+Hornear 40 minutos a 180 grados  False" tabindex="0" role="link" onclick="window.open('receta-7.html?v=1784235663059','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-7.html?v=1784235663059','_blank','noopener');}">
+  <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
+  <div class="image"><img src="media/receta-7.png?v=1784235663059" alt="Budin de manzana, banana, avena y pasas"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Budin de manzana, banana, avena y pasas</h2>
@@ -172,7 +177,7 @@ Hornear 40 minutos a 180 grados  False" tabindex="0" role="link" onclick="window
     <p class="summary">Una nueva publicaci&#243;n del recetario.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-search="CHOCOTORTA Chocotorta cl&#225;sica El postre argentino clasico. Consejos:
+</article><article class="card clickable-card" data-recipe-id="13" data-search="CHOCOTORTA Chocotorta cl&#225;sica El postre argentino clasico. Consejos:
 - El reposo largo es esencial: une las capas y ablanda las galletitas sin desarmarlas.
 - Mantener refrigerada y consumir dentro de 2 a 3 d&#237;as. Fernando I  F&#225;cil publicada postre, sin cocci&#243;n, argentina, dulce de leche, preparar con anticipaci&#243;n  600 gr - galletitas de chocolate
 500 gr - dulce de leche comun o repostero
@@ -190,8 +195,9 @@ Extender una capa fina y pareja de crema. Repetir capas de galletitas y crema ha
 
 Tapar y refrigerar al menos 8 horas, idealmente toda la noche.
 
-Desmoldar en fr&#237;o, retirar el film, cubrir con la crema reservada y espolvorear cacao o chocolate rallado. 30 min de preparaci&#243;n + 8 h de fr&#237;o False" tabindex="0" role="link" onclick="window.open('receta-13.html?v=1784208871666','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-13.html?v=1784208871666','_blank','noopener');}">
-  <div class="image"><img src="media/receta-13.png?v=1784208871666" alt="Chocotorta cl&#225;sica"></div>
+Desmoldar en fr&#237;o, retirar el film, cubrir con la crema reservada y espolvorear cacao o chocolate rallado. 30 min de preparaci&#243;n + 8 h de fr&#237;o False" tabindex="0" role="link" onclick="window.open('receta-13.html?v=1784235663059','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-13.html?v=1784235663059','_blank','noopener');}">
+  <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
+  <div class="image"><img src="media/receta-13.png?v=1784235663059" alt="Chocotorta cl&#225;sica"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Chocotorta cl&#225;sica</h2>
@@ -199,7 +205,7 @@ Desmoldar en fr&#237;o, retirar el film, cubrir con la crema reservada y espolvo
     <p class="summary">El postre argentino clasico.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-search="R00009 Dulce de leche casero tradicional Dulce de leche casero tradicional, preparado lentamente con leche, az&#250;car, vainilla y bicarbonato. Queda cremoso, con color caramelo y sabor bien casero.  Fernando I  Media publicada dulce, leche, argentino, postre, casero, tradicional  1 litro - leche entera
+</article><article class="card clickable-card" data-recipe-id="17" data-search="R00009 Dulce de leche casero tradicional Dulce de leche casero tradicional, preparado lentamente con leche, az&#250;car, vainilla y bicarbonato. Queda cremoso, con color caramelo y sabor bien casero.  Fernando I  Media publicada dulce, leche, argentino, postre, casero, tradicional  1 litro - leche entera
 250 g - az&#250;car
 1/2 cucharadita - bicarbonato de sodio (rasa)
 1 cucharadita - extracto de vainilla 450 g aprox. Colocar la leche en una olla alta, ancha y de fondo grueso. Calentar a fuego medio sin dejar que rebalse.
@@ -216,8 +222,9 @@ Probar el punto poniendo una cucharadita sobre un plato fr&#237;o: al enfriarse 
 
 Retirar un poco antes del espesor final, porque espesar&#225; al enfriarse. Pasar caliente a un frasco limpio y resistente al calor.
 
-Enfriar, tapar y conservar en heladera. Seguridad: esta es una preparaci&#243;n dom&#233;stica refrigerada, no una conserva estable. Usar utensilios limpios y consumir en 2 semanas. 1 h 40 min a 2 h 10 min False" tabindex="0" role="link" onclick="window.open('receta-17.html?v=1784208871666','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-17.html?v=1784208871666','_blank','noopener');}">
-  <div class="image"><img src="media/receta-17.png?v=1784208871666" alt="Dulce de leche casero tradicional"></div>
+Enfriar, tapar y conservar en heladera. Seguridad: esta es una preparaci&#243;n dom&#233;stica refrigerada, no una conserva estable. Usar utensilios limpios y consumir en 2 semanas. 1 h 40 min a 2 h 10 min False" tabindex="0" role="link" onclick="window.open('receta-17.html?v=1784235663059','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-17.html?v=1784235663059','_blank','noopener');}">
+  <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
+  <div class="image"><img src="media/receta-17.png?v=1784235663059" alt="Dulce de leche casero tradicional"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Dulce de leche casero tradicional</h2>
@@ -225,7 +232,7 @@ Enfriar, tapar y conservar en heladera. Seguridad: esta es una preparaci&#243;n 
     <p class="summary">Dulce de leche casero tradicional, preparado lentamente con leche, az&#250;car, vainilla y bicarbonato. Queda cremoso, con color caramelo y sabor bien casero.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-search="R00008 Ensalada rusa argentina Ensalada rusa cl&#225;sica argentina, con papa, zanahoria, arvejas, huevo y mayonesa. Una receta fresca, rendidora y muy pr&#225;ctica para acompa&#241;ar comidas familiares o preparar con anticipaci&#243;n.  Fernando I  F&#225;cil publicada ensalada, argentina, guarnici&#243;n, papa, fr&#237;a, familiar  750 g - papas
+</article><article class="card clickable-card" data-recipe-id="16" data-search="R00008 Ensalada rusa argentina Ensalada rusa cl&#225;sica argentina, con papa, zanahoria, arvejas, huevo y mayonesa. Una receta fresca, rendidora y muy pr&#225;ctica para acompa&#241;ar comidas familiares o preparar con anticipaci&#243;n.  Fernando I  F&#225;cil publicada ensalada, argentina, guarnici&#243;n, papa, fr&#237;a, familiar  750 g - papas
 300 g - zanahorias
 200 g - arvejas congeladas o frescas
 3 unidades - huevos
@@ -246,8 +253,9 @@ Mezclar mayonesa, mostaza, lim&#243;n, sal y pimienta para preparar el aderezo.
 
 Incorporar suavemente el aderezo a las verduras y los huevos, tratando de no desarmar la papa.
 
-Tapar y refrigerar al menos 1 hora. Servir bien fr&#237;a. Consejo: cocinar por separado mantiene el color y evita que la papa se desarme. 1 h 45 min False" tabindex="0" role="link" onclick="window.open('receta-16.html?v=1784208871666','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-16.html?v=1784208871666','_blank','noopener');}">
-  <div class="image"><img src="media/receta-16.png?v=1784208871666" alt="Ensalada rusa argentina"></div>
+Tapar y refrigerar al menos 1 hora. Servir bien fr&#237;a. Consejo: cocinar por separado mantiene el color y evita que la papa se desarme. 1 h 45 min False" tabindex="0" role="link" onclick="window.open('receta-16.html?v=1784235663059','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-16.html?v=1784235663059','_blank','noopener');}">
+  <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
+  <div class="image"><img src="media/receta-16.png?v=1784235663059" alt="Ensalada rusa argentina"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Ensalada rusa argentina</h2>
@@ -255,7 +263,7 @@ Tapar y refrigerar al menos 1 hora. Servir bien fr&#237;a. Consejo: cocinar por 
     <p class="summary">Ensalada rusa cl&#225;sica argentina, con papa, zanahoria, arvejas, huevo y mayonesa. Una receta fresca, rendidora y muy pr&#225;ctica para acompa&#241;ar comidas familiares o preparar con anticipaci&#243;n.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-search="R00004 Galletas de avena y naranja   Fernando   publicada   2 - huevos
+</article><article class="card clickable-card" data-recipe-id="9" data-search="R00004 Galletas de avena y naranja   Fernando   publicada   2 - huevos
 150 gr - miel
 1 unidad - ralladura de naranja
 130 gr - jugo de naranja
@@ -266,8 +274,9 @@ polvo de hornear  medir los ingredientes
 
 mezclar todo
 
-hornear 15 minutos a 180 grados  False" tabindex="0" role="link" onclick="window.open('receta-9.html?v=1784208871666','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-9.html?v=1784208871666','_blank','noopener');}">
-  <div class="image"><img src="media/receta-9.png?v=1784208871666" alt="Galletas de avena y naranja"></div>
+hornear 15 minutos a 180 grados  False" tabindex="0" role="link" onclick="window.open('receta-9.html?v=1784235663059','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-9.html?v=1784235663059','_blank','noopener');}">
+  <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
+  <div class="image"><img src="media/receta-9.png?v=1784235663059" alt="Galletas de avena y naranja"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Galletas de avena y naranja</h2>
@@ -275,7 +284,7 @@ hornear 15 minutos a 180 grados  False" tabindex="0" role="link" onclick="window
     <p class="summary">Una nueva publicaci&#243;n del recetario.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-search="R00006 Milanesas de carne   Fernando I   publicada   800 gr - Nalga cortada para milanesa
+</article><article class="card clickable-card" data-recipe-id="12" data-search="R00006 Milanesas de carne   Fernando I   publicada   800 gr - Nalga cortada para milanesa
 3 - huevos
 2 - dientes de ajo
 3 cdas - perejil picado fino
@@ -296,8 +305,9 @@ Acomodarlas sin amontonar, taparlas y llevarlas a la heladera durante 15 minutos
 
 Calentar en una sart&#233;n amplia una capa de 1,5 a 2 cm de aceite, idealmente a 170-180 &#176;C. Fre&#237;r pocas milanesas por tanda, aproximadamente 1 a 2 minutos por lado, hasta que est&#233;n doradas y la carne est&#233; cocida. Evitar llenar la sart&#233;n para que el aceite no pierda temperatura.
 
-Retirar con pinza o espumadera y dejar escurrir sobre una rejilla; si no hay rejilla, usar papel absorbente sin apilarlas. Servir enseguida con gajos de lim&#243;n y la guarnici&#243;n elegida.  False" tabindex="0" role="link" onclick="window.open('receta-12.html?v=1784208871666','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-12.html?v=1784208871666','_blank','noopener');}">
-  <div class="image"><img src="media/receta-12.png?v=1784208871666" alt="Milanesas de carne"></div>
+Retirar con pinza o espumadera y dejar escurrir sobre una rejilla; si no hay rejilla, usar papel absorbente sin apilarlas. Servir enseguida con gajos de lim&#243;n y la guarnici&#243;n elegida.  False" tabindex="0" role="link" onclick="window.open('receta-12.html?v=1784235663059','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-12.html?v=1784235663059','_blank','noopener');}">
+  <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
+  <div class="image"><img src="media/receta-12.png?v=1784235663059" alt="Milanesas de carne"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Milanesas de carne</h2>
@@ -305,7 +315,7 @@ Retirar con pinza o espumadera y dejar escurrir sobre una rejilla; si no hay rej
     <p class="summary">Una nueva publicaci&#243;n del recetario.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-search="R00005 Sopa paraguaya light   Fernando   publicada   300 gr - cebolla picada fina
+</article><article class="card clickable-card" data-recipe-id="10" data-search="R00005 Sopa paraguaya light   Fernando   publicada   300 gr - cebolla picada fina
 40 ml - aceite de oliva
 3 - huevos
 300 gr - Harina de maiz fina
@@ -325,8 +335,9 @@ Ir agregando lentamente el agua caliente hasta lograr una mezcla espesa.
 
 Volcar en una fuente aceitada (muy poco).
 
-Hornear a 180&#176;C durante 35–45 min, hasta que quede firme y dorada arriba  False" tabindex="0" role="link" onclick="window.open('receta-10.html?v=1784208871666','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-10.html?v=1784208871666','_blank','noopener');}">
-  <div class="image"><img src="media/receta-10.png?v=1784208871666" alt="Sopa paraguaya light"></div>
+Hornear a 180&#176;C durante 35–45 min, hasta que quede firme y dorada arriba  False" tabindex="0" role="link" onclick="window.open('receta-10.html?v=1784235663059','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-10.html?v=1784235663059','_blank','noopener');}">
+  <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
+  <div class="image"><img src="media/receta-10.png?v=1784235663059" alt="Sopa paraguaya light"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Sopa paraguaya light</h2>
@@ -335,12 +346,20 @@ Hornear a 180&#176;C durante 35–45 min, hasta que quede firme y dorada arriba 
     <span class="print-button">Ver receta</span>
   </div>
 </article></section></main>
+  <div class="favorite-dialog hidden" id="favoriteDialog" role="dialog" aria-modal="true" aria-labelledby="favoriteMessage"><div class="favorite-dialog-card"><p id="favoriteMessage">Para guardar favoritos, ingresá o creá tu cuenta.</p><div class="dialog-actions"><a id="favoriteLogin" href="mi-cuenta.html">Ingresar o crear cuenta</a><button type="button" onclick="closeFavoriteDialog()">Ahora no</button></div></div></div>
   <script>
-    const input=document.querySelector('#search'),grid=document.querySelector('#recipes'),cards=[...document.querySelectorAll('.card')],counter=document.querySelector('#count');
+    const endpoint="https://api.cuadernoderecetas.com.ar/";
+    const input=document.querySelector('#search'),grid=document.querySelector('#recipes'),cards=[...document.querySelectorAll('.card')],counter=document.querySelector('#count'),favoriteDialog=document.querySelector('#favoriteDialog'),favoriteLogin=document.querySelector('#favoriteLogin');
+    let authenticated=false,favorites=new Set();
     shuffleCards();
+    loadFavorites();
     input.addEventListener('input',()=>{const q=input.value.toLocaleLowerCase('es').trim();let shown=0;cards.forEach(card=>{const visible=!q||card.dataset.search.toLocaleLowerCase('es').includes(q);card.classList.toggle('hidden',!visible);if(visible)shown++});counter.textContent=`${shown} publicaciones`});
     function shuffleCards(){if(!grid||cards.length<2)return;const shuffled=[...cards];for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]}shuffled.forEach(card=>grid.appendChild(card))}
     function openRecipeWindow(url){const opened=window.open(url,'_blank','popup=yes,width=980,height=900,scrollbars=yes,resizable=yes');if(opened){opened.focus();return false}return true}
+    async function loadFavorites(){if(!endpoint)return;try{const me=await fetch(endpoint.replace(/\/$/,'')+'/auth/me',{credentials:'include'});const session=await me.json();authenticated=Boolean(session.authenticated);if(!authenticated)return;const response=await fetch(endpoint.replace(/\/$/,'')+'/favorites',{credentials:'include'});if(!response.ok)return;const data=await response.json();favorites=new Set((data.favorites||[]).map(Number));document.querySelectorAll('.favorite-button').forEach(updateFavoriteButton)}catch{}}
+    function updateFavoriteButton(button){const id=Number(button.closest('.card').dataset.recipeId),active=favorites.has(id);button.classList.toggle('is-favorite',active);button.textContent=active?'♥':'♡';button.setAttribute('aria-pressed',String(active));button.setAttribute('aria-label',active?'Quitar de favoritos':'Guardar en favoritos')}
+    async function toggleFavorite(event,button){event.preventDefault();event.stopPropagation();if(!authenticated){favoriteLogin.href='mi-cuenta.html?return='+encodeURIComponent(location.pathname.split('/').pop()||'index.html');favoriteDialog.classList.remove('hidden');return}const id=Number(button.closest('.card').dataset.recipeId),active=favorites.has(id);button.disabled=true;try{const response=await fetch(endpoint.replace(/\/$/,'')+'/favorites/'+id,{method:active?'DELETE':'POST',credentials:'include'});if(response.status===401){authenticated=false;favoriteDialog.classList.remove('hidden');return}if(!response.ok)throw new Error();active?favorites.delete(id):favorites.add(id);updateFavoriteButton(button)}finally{button.disabled=false}}
+    function closeFavoriteDialog(){favoriteDialog.classList.add('hidden')}
     let printedDetails=null;
     function printRecipe(button){
       const card=button.closest('.card'),details=card.querySelector('details');
