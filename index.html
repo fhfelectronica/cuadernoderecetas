@@ -3,10 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Cuaderno de Recetas</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1784245137028">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1784245137028">
-<meta property="og:image" content="assets/logo-icon-512.png?v=1784245137028">
+  <title>Cuaderno de Recetas | Recetas caseras paso a paso</title>
+  <meta name="description" content="Elige, crea, y colecciona tus recetas preferidas.">
+  <link rel="canonical" href="https://cuadernoderecetas.com.ar/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cuaderno de Recetas">
+  <meta property="og:description" content="Elige, crea, y colecciona tus recetas preferidas.">
+  <meta property="og:url" content="https://cuadernoderecetas.com.ar/">
+  <meta property="og:image" content="https://cuadernoderecetas.com.ar/assets/logo-icon-512.png?v=1784317951863">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://cuadernoderecetas.com.ar/#website","url":"https://cuadernoderecetas.com.ar/","name":"Cuaderno de Recetas","inLanguage":"es-AR"},{"@type":"Organization","@id":"https://cuadernoderecetas.com.ar/#organization","name":"Tu propio cuaderno de Recetas","url":"https://cuadernoderecetas.com.ar/"}]}</script>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=1784317951863">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1784317951863">
 
   <style>
     :root{--ink:#3a210f;--muted:#746456;--green:#4F9B68;--favorite:#D35F4B;--sage:#e4ead2;--terracotta:#d36b43;--pale:#f4eadb;--paper:#fff8ec;--card:#fffdf8;--line:#eadcc7;--shadow:#3b210f14}
@@ -19,7 +27,7 @@
     .search{display:flex;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:999px;box-shadow:0 16px 44px var(--shadow);padding:9px 18px}
     .search input{width:100%;border:0;outline:0;padding:12px;font-size:17px;color:var(--ink)}.count{white-space:nowrap;color:var(--muted);font-size:14px}
     main{max-width:1180px;margin:auto;padding:0 24px 70px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:24px}
-    .card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:26px;box-shadow:0 10px 30px var(--shadow);transition:.2s}.clickable-card{cursor:pointer}.clickable-card:focus{outline:3px solid #d9dfbf;outline-offset:4px}.favorite-button{position:absolute;z-index:2;right:14px;top:14px;width:46px;height:46px;border:1px solid #eadcc7;border-radius:50%;background:#fffdf8ed;color:var(--favorite);font:700 29px/1 Arial,sans-serif;cursor:pointer;box-shadow:0 6px 18px #3b210f22}.favorite-button:hover{transform:scale(1.06)}.favorite-button.is-favorite{background:var(--favorite);border-color:var(--favorite);color:#fff}
+    .card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:26px;box-shadow:0 10px 30px var(--shadow);transition:.2s}.card-link{display:block;color:inherit;text-decoration:none}.card-link:focus{outline:3px solid #d9dfbf;outline-offset:-3px}.favorite-button{position:absolute;z-index:2;right:14px;top:14px;width:46px;height:46px;border:1px solid #eadcc7;border-radius:50%;background:#fffdf8ed;color:var(--favorite);font:700 29px/1 Arial,sans-serif;cursor:pointer;box-shadow:0 6px 18px #3b210f22}.favorite-button:hover{transform:scale(1.06)}.favorite-button.is-favorite{background:var(--favorite);border-color:var(--favorite);color:#fff}
     .card:hover{transform:translateY(-4px);box-shadow:0 18px 44px #3a26151f}.image{height:230px;background:#eadfce;overflow:hidden}.image img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}.card:hover .image img{transform:scale(1.035)}
     .placeholder{display:grid;place-items:center;background:linear-gradient(135deg,#e4ead2,#f6dfc2)}.placeholder span{font:700 74px Georgia;color:var(--green)}
     .content{padding:24px 24px 26px}.eyebrow{margin:0 0 8px;color:var(--terracotta);font-size:11px;font-weight:900;letter-spacing:.16em}.content h2{font:700 30px/1.08 Georgia,serif;margin:0 0 12px;color:var(--ink)}
@@ -55,11 +63,11 @@
 </head>
 <body>
   <header><picture class="brand-logo">
-  <source media="(max-width:640px)" srcset="assets/logo-mobile.png?v=1784245137028">
-  <img src="assets/logo-header.png?v=1784245137028" alt="Tu propio cuaderno de Recetas">
-</picture><h1></h1><p>Elige, crea, y colecciona tus recetas preferidas.</p><nav class="site-nav" aria-label="Secciones principales"><a class="primary" href="index.html">Recetas</a><a href="ayuda.html">Ayuda</a><a href="mi-cuenta.html">Mi cuenta</a></nav></header>
-  <div class="toolbar"><label class="search">🔎<input id="search" type="search" placeholder="Buscar recetas, ingredientes o ideas…" autofocus><span class="count" id="count">17 publicaciones</span></label></div>
-  <main><section class="grid" id="recipes"><article class="card clickable-card" data-recipe-id="18" data-search="R00010 Aros de cebolla Aros de cebolla fritos, dorados y crocantes, con una masa liviana preparada con harina, almid&#243;n y agua con gas bien fr&#237;a. Ideales como entrada, picada o acompa&#241;amiento.  Fernando I  Media publicada fritura, cebolla, entrada, picada, crocante, acompa&#241;amiento  2 unidades - cebollas grandes y firmes
+  <source media="(max-width:640px)" srcset="assets/logo-mobile.png?v=1784317951863">
+  <img src="assets/logo-header.png?v=1784317951863" alt="Tu propio cuaderno de Recetas">
+</picture><h1>Recetas caseras explicadas paso a paso</h1><p>Elige, crea, y colecciona tus recetas preferidas.</p><nav class="site-nav" aria-label="Secciones principales"><a class="primary" href="index.html">Recetas</a><a href="ayuda.html">Ayuda</a><a href="mi-cuenta.html">Mi cuenta</a></nav></header>
+  <div class="toolbar"><label class="search">🔎<input id="search" type="search" placeholder="Buscar recetas, ingredientes o ideas…" autofocus><span class="count" id="count">19 publicaciones</span></label></div>
+  <main><section class="grid" id="recipes"><article class="card" data-recipe-id="18" data-search="R00010 Aros de cebolla Aros de cebolla fritos, dorados y crocantes, con una masa liviana preparada con harina, almid&#243;n y agua con gas bien fr&#237;a. Ideales como entrada, picada o acompa&#241;amiento.  Fernando I  Media publicada fritura, cebolla, entrada, picada, crocante, acompa&#241;amiento  2 unidades - cebollas grandes y firmes
 120 g - harina 0000
 2 cucharadas - harina extra para enharinar
 40 g - almid&#243;n de ma&#237;z
@@ -81,9 +89,10 @@ Fre&#237;r en tandas peque&#241;as durante 2 a 3 minutos, gir&#225;ndolos una ve
 
 Escurrir sobre una rejilla y salar enseguida.
 
-Servir calientes. Consejo: no batir de m&#225;s la masa y no llenar la olla; los grumos, el fr&#237;o y la temperatura estable ayudan a lograr una fritura liviana. 45 min False" tabindex="0" role="link" onclick="window.open('receta-18.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-18.html?v=1784245137028','_blank','noopener');}">
+Servir calientes. Consejo: no batir de m&#225;s la masa y no llenar la olla; los grumos, el fr&#237;o y la temperatura estable ayudan a lograr una fritura liviana. 45 min False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-18.png?v=1784245137028" alt="Aros de cebolla"></div>
+  <a class="card-link" href="receta-18-aros-de-cebolla.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-18.png?v=1784317951863" alt="Aros de cebolla"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Aros de cebolla</h2>
@@ -92,7 +101,8 @@ Servir calientes. Consejo: no batir de m&#225;s la masa y no llenar la olla; los
     <p class="summary">Aros de cebolla fritos, dorados y crocantes, con una masa liviana preparada con harina, almid&#243;n y agua con gas bien fr&#237;a. Ideales como entrada, picada o acompa&#241;amiento.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="8" data-search="R00003 Bondiola desmenuzada   Fernando   publicada   bondiola
+  </a>
+</article><article class="card" data-recipe-id="8" data-search="R00003 Bondiola desmenuzada   Fernando   publicada   bondiola
 morron
 cebolla
 ajo
@@ -104,9 +114,10 @@ cerveza  los ingredientes
 
 dorar la bondiola
 
-cocinar por 3 horas  False" tabindex="0" role="link" onclick="window.open('receta-8.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-8.html?v=1784245137028','_blank','noopener');}">
+cocinar por 3 horas  False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-8.png?v=1784245137028" alt="Bondiola desmenuzada"></div>
+  <a class="card-link" href="receta-8-bondiola-desmenuzada.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-8.png?v=1784317951863" alt="Bondiola desmenuzada"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Bondiola desmenuzada</h2>
@@ -115,7 +126,8 @@ cocinar por 3 horas  False" tabindex="0" role="link" onclick="window.open('recet
     <p class="summary">Una nueva publicaci&#243;n del recetario.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="15" data-search="R00007 Bruschettas de tomate y albahaca Bruschettas cl&#225;sicas de tomate y albahaca sobre pan tostado, con ajo, aceite de oliva y un toque de aceto. Una entrada simple, fresca y muy pr&#225;ctica para preparar en pocos minutos.  Fernando I  F&#225;cil publicada entrada, pan, tomate, albahaca, vegetariana, r&#225;pida  8 unidades - rodajas de pan de campo, de 1,5 cm
+  </a>
+</article><article class="card" data-recipe-id="15" data-search="R00007 Bruschettas de tomate y albahaca Bruschettas cl&#225;sicas de tomate y albahaca sobre pan tostado, con ajo, aceite de oliva y un toque de aceto. Una entrada simple, fresca y muy pr&#225;ctica para preparar en pocos minutos.  Fernando I  F&#225;cil publicada entrada, pan, tomate, albahaca, vegetariana, r&#225;pida  8 unidades - rodajas de pan de campo, de 1,5 cm
 350 g - tomates cherry o tomates perita firmes
 1 unidad - diente de ajo para el tomate
 1 unidad - diente de ajo entero para frotar el pan
@@ -134,9 +146,10 @@ Frotar suavemente el pan caliente con el diente de ajo entero.
 
 Distribuir el tomate justo antes de servir y terminar con pimienta y unas hojas de albahaca.
 
-Consejo: escurrir el tomate evita que el pan pierda crocancia. Conviene armar &#250;nicamente lo que se va a comer en el momento. 33 min False" tabindex="0" role="link" onclick="window.open('receta-15.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-15.html?v=1784245137028','_blank','noopener');}">
+Consejo: escurrir el tomate evita que el pan pierda crocancia. Conviene armar &#250;nicamente lo que se va a comer en el momento. 33 min False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-15.png?v=1784245137028" alt="Bruschettas de tomate y albahaca"></div>
+  <a class="card-link" href="receta-15-bruschettas-de-tomate-y-albahaca.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-15.png?v=1784317951863" alt="Bruschettas de tomate y albahaca"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Bruschettas de tomate y albahaca</h2>
@@ -145,14 +158,16 @@ Consejo: escurrir el tomate evita que el pan pierda crocancia. Conviene armar &#
     <p class="summary">Bruschettas cl&#225;sicas de tomate y albahaca sobre pan tostado, con ajo, aceite de oliva y un toque de aceto. Una entrada simple, fresca y muy pr&#225;ctica para preparar en pocos minutos.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="6" data-search="R00001 Budin Budin clasico  Fernando B   publicada   5 - huevos
+  </a>
+</article><article class="card" data-recipe-id="6" data-search="R00001 Budin Budin clasico  Fernando B   publicada   5 - huevos
 500 gr - azucar  azucar y manteca
 
 huevos
 
-hornear  bordadosfernando@yahoo.com.ar 6 Fernando B False" tabindex="0" role="link" onclick="window.open('receta-6.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-6.html?v=1784245137028','_blank','noopener');}">
+hornear  bordadosfernando@yahoo.com.ar 6 Fernando B False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-6.jpg?v=1784245137028" alt="Budin"></div>
+  <a class="card-link" href="receta-6-budin.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-6.jpg?v=1784317951863" alt="Budin"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Budin</h2>
@@ -161,7 +176,8 @@ hornear  bordadosfernando@yahoo.com.ar 6 Fernando B False" tabindex="0" role="li
     <p class="summary">Budin clasico</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="7" data-search="R00002 Budin de manzana, banana, avena y pasas   Fernando   publicada   4 - manzanas
+  </a>
+</article><article class="card" data-recipe-id="7" data-search="R00002 Budin de manzana, banana, avena y pasas   Fernando   publicada   4 - manzanas
 2 - bananas
 200 cc - agua
 4 - huevos
@@ -171,9 +187,10 @@ pasas de uva  medir los ingredientes
 
 mezclar
 
-Hornear 40 minutos a 180 grados  False" tabindex="0" role="link" onclick="window.open('receta-7.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-7.html?v=1784245137028','_blank','noopener');}">
+Hornear 40 minutos a 180 grados  False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-7.png?v=1784245137028" alt="Budin de manzana, banana, avena y pasas"></div>
+  <a class="card-link" href="receta-7-budin-de-manzana-banana-avena-y-pasas.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-7.png?v=1784317951863" alt="Budin de manzana, banana, avena y pasas"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Budin de manzana, banana, avena y pasas</h2>
@@ -182,7 +199,51 @@ Hornear 40 minutos a 180 grados  False" tabindex="0" role="link" onclick="window
     <p class="summary">Una nueva publicaci&#243;n del recetario.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="13" data-search="CHOCOTORTA Chocotorta cl&#225;sica El postre argentino clasico. Consejos:
+  </a>
+</article><article class="card" data-recipe-id="35" data-search="R00027 Carbonada en zapallo Carbonada en zapallo: receta casera para guardar, preparar y compartir. Rinde 6 porciones.  Fernando I  Media publicada guiso, zapallo, carne, argentino, plato principal  1 - zapallo cabutia grande, de 3 a 4 kg
+700 gr - de carne vacuna para guiso, en cubos
+1 - cebolla grande
+1 - morr&#243;n rojo
+2 - dientes de ajo
+2 - papas medianas
+1 - batata mediana
+300 gr - de zapallo adicional, en cubos
+2 - choclos, cortados en ruedas
+2 - tomates maduros, picados
+1 litro - caldo de carne, aproximadamente
+100 gr - de orejones de durazno, cortados
+1 cdita - piment&#243;n dulce
+1/2 cdita - cucharadita de comino
+1 - hoja de laurel
+2 cdas - aceite
+20 gr - manteca
+sal
+pimienta 6 porciones Lavar el zapallo, cortar una tapa amplia y retirar semillas y fibras sin perforar la c&#225;scara. Untar el interior con manteca, salpimentar y volver a colocar la tapa.
+
+Envolver el zapallo con papel de aluminio, colocarlo en una asadera con 2 cm de agua y hornear a 180 &#176;C durante 50 a 70 minutos, hasta que comience a estar tierno pero conserve su forma.
+
+Mientras tanto, calentar el aceite en una olla amplia y dorar la carne en tandas. Retirarla y reservarla.
+
+En la misma olla cocinar la cebolla y el morr&#243;n picados durante 7 minutos. Agregar ajo, piment&#243;n, comino, laurel y tomate; cocinar 5 minutos m&#225;s.
+
+Reincorporar la carne, cubrir apenas con caldo caliente y cocinar suavemente 30 minutos. A&#241;adir papa, batata, zapallo en cubos, choclo y orejones.
+
+Cocinar otros 20 a 25 minutos, agregando caldo si fuera necesario, hasta que la carne y las verduras est&#233;n tiernas y el guiso espeso. Rectificar sal y pimienta.
+
+Retirar un poco de pulpa cocida de las paredes del zapallo y mezclarla con el guiso. Rellenar el zapallo, tapar y hornear 15 minutos m&#225;s. Servir caliente dentro del mismo zapallo.     False">
+  <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
+  <a class="card-link" href="receta-35-carbonada-en-zapallo.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-35.png?v=1784317951863" alt="Carbonada en zapallo"></div>
+  <div class="content">
+    <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
+    <h2>Carbonada en zapallo</h2>
+    <p class="author">Por Fernando I</p>
+    
+    <p class="summary">Carbonada en zapallo: receta casera para guardar, preparar y compartir. Rinde 6 porciones.</p>
+    <span class="print-button">Ver receta</span>
+  </div>
+  </a>
+</article><article class="card" data-recipe-id="13" data-search="CHOCOTORTA Chocotorta cl&#225;sica El postre argentino clasico. Consejos:
 - El reposo largo es esencial: une las capas y ablanda las galletitas sin desarmarlas.
 - Mantener refrigerada y consumir dentro de 2 a 3 d&#237;as. Fernando B  F&#225;cil publicada postre, sin cocci&#243;n, argentina, dulce de leche, preparar con anticipaci&#243;n  600 gr - galletitas de chocolate
 500 gr - dulce de leche comun o repostero
@@ -200,9 +261,10 @@ Extender una capa fina y pareja de crema. Repetir capas de galletitas y crema ha
 
 Tapar y refrigerar al menos 8 horas, idealmente toda la noche.
 
-Desmoldar en fr&#237;o, retirar el film, cubrir con la crema reservada y espolvorear cacao o chocolate rallado. 30 min de preparaci&#243;n + 8 h de fr&#237;o bordadosfernando@yahoo.com.ar 6 Fernando B False" tabindex="0" role="link" onclick="window.open('receta-13.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-13.html?v=1784245137028','_blank','noopener');}">
+Desmoldar en fr&#237;o, retirar el film, cubrir con la crema reservada y espolvorear cacao o chocolate rallado. 30 min de preparaci&#243;n + 8 h de fr&#237;o bordadosfernando@yahoo.com.ar 6 Fernando B False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-13.png?v=1784245137028" alt="Chocotorta cl&#225;sica"></div>
+  <a class="card-link" href="receta-13-chocotorta-clasica.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-13.png?v=1784317951863" alt="Chocotorta cl&#225;sica"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Chocotorta cl&#225;sica</h2>
@@ -211,7 +273,8 @@ Desmoldar en fr&#237;o, retirar el film, cubrir con la crema reservada y espolvo
     <p class="summary">El postre argentino clasico.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="17" data-search="R00009 Dulce de leche casero tradicional Dulce de leche casero tradicional, preparado lentamente con leche, az&#250;car, vainilla y bicarbonato. Queda cremoso, con color caramelo y sabor bien casero.  Fernando I  Media publicada dulce, leche, argentino, postre, casero, tradicional  1 litro - leche entera
+  </a>
+</article><article class="card" data-recipe-id="17" data-search="R00009 Dulce de leche casero tradicional Dulce de leche casero tradicional, preparado lentamente con leche, az&#250;car, vainilla y bicarbonato. Queda cremoso, con color caramelo y sabor bien casero.  Fernando I  Media publicada dulce, leche, argentino, postre, casero, tradicional  1 litro - leche entera
 250 g - az&#250;car
 1/2 cucharadita - bicarbonato de sodio (rasa)
 1 cucharadita - extracto de vainilla 450 g aprox. Colocar la leche en una olla alta, ancha y de fondo grueso. Calentar a fuego medio sin dejar que rebalse.
@@ -228,9 +291,10 @@ Probar el punto poniendo una cucharadita sobre un plato fr&#237;o: al enfriarse 
 
 Retirar un poco antes del espesor final, porque espesar&#225; al enfriarse. Pasar caliente a un frasco limpio y resistente al calor.
 
-Enfriar, tapar y conservar en heladera. Seguridad: esta es una preparaci&#243;n dom&#233;stica refrigerada, no una conserva estable. Usar utensilios limpios y consumir en 2 semanas. 1 h 40 min a 2 h 10 min False" tabindex="0" role="link" onclick="window.open('receta-17.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-17.html?v=1784245137028','_blank','noopener');}">
+Enfriar, tapar y conservar en heladera. Seguridad: esta es una preparaci&#243;n dom&#233;stica refrigerada, no una conserva estable. Usar utensilios limpios y consumir en 2 semanas. 1 h 40 min a 2 h 10 min False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-17.png?v=1784245137028" alt="Dulce de leche casero tradicional"></div>
+  <a class="card-link" href="receta-17-dulce-de-leche-casero-tradicional.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-17.png?v=1784317951863" alt="Dulce de leche casero tradicional"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Dulce de leche casero tradicional</h2>
@@ -239,7 +303,8 @@ Enfriar, tapar y conservar en heladera. Seguridad: esta es una preparaci&#243;n 
     <p class="summary">Dulce de leche casero tradicional, preparado lentamente con leche, az&#250;car, vainilla y bicarbonato. Queda cremoso, con color caramelo y sabor bien casero.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="16" data-search="R00008 Ensalada rusa argentina Ensalada rusa cl&#225;sica argentina, con papa, zanahoria, arvejas, huevo y mayonesa. Una receta fresca, rendidora y muy pr&#225;ctica para acompa&#241;ar comidas familiares o preparar con anticipaci&#243;n.  Fernando I  F&#225;cil publicada ensalada, argentina, guarnici&#243;n, papa, fr&#237;a, familiar  750 g - papas
+  </a>
+</article><article class="card" data-recipe-id="16" data-search="R00008 Ensalada rusa argentina Ensalada rusa cl&#225;sica argentina, con papa, zanahoria, arvejas, huevo y mayonesa. Una receta fresca, rendidora y muy pr&#225;ctica para acompa&#241;ar comidas familiares o preparar con anticipaci&#243;n.  Fernando I  F&#225;cil publicada ensalada, argentina, guarnici&#243;n, papa, fr&#237;a, familiar  750 g - papas
 300 g - zanahorias
 200 g - arvejas congeladas o frescas
 3 unidades - huevos
@@ -260,9 +325,10 @@ Mezclar mayonesa, mostaza, lim&#243;n, sal y pimienta para preparar el aderezo.
 
 Incorporar suavemente el aderezo a las verduras y los huevos, tratando de no desarmar la papa.
 
-Tapar y refrigerar al menos 1 hora. Servir bien fr&#237;a. Consejo: cocinar por separado mantiene el color y evita que la papa se desarme. 1 h 45 min False" tabindex="0" role="link" onclick="window.open('receta-16.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-16.html?v=1784245137028','_blank','noopener');}">
+Tapar y refrigerar al menos 1 hora. Servir bien fr&#237;a. Consejo: cocinar por separado mantiene el color y evita que la papa se desarme. 1 h 45 min False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-16.png?v=1784245137028" alt="Ensalada rusa argentina"></div>
+  <a class="card-link" href="receta-16-ensalada-rusa-argentina.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-16.png?v=1784317951863" alt="Ensalada rusa argentina"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Ensalada rusa argentina</h2>
@@ -271,7 +337,8 @@ Tapar y refrigerar al menos 1 hora. Servir bien fr&#237;a. Consejo: cocinar por 
     <p class="summary">Ensalada rusa cl&#225;sica argentina, con papa, zanahoria, arvejas, huevo y mayonesa. Una receta fresca, rendidora y muy pr&#225;ctica para acompa&#241;ar comidas familiares o preparar con anticipaci&#243;n.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="36" data-search="R00028 Fain&#225; Fain&#225;: receta casera para guardar, preparar y compartir. Rinde 8 porciones finas.  Fernando I  F&#225;cil publicada garbanzos, horno, pizza, acompa&#241;amiento  250 gr - harina de garbanzos
+  </a>
+</article><article class="card" data-recipe-id="36" data-search="R00028 Fain&#225; Fain&#225;: receta casera para guardar, preparar y compartir. Rinde 8 porciones finas.  Fernando I  F&#225;cil publicada garbanzos, horno, pizza, acompa&#241;amiento  250 gr - harina de garbanzos
 750 ml - agua a temperatura ambiente
 60 ml - aceite de oliva
 1 cucharadita - sal
@@ -288,9 +355,10 @@ Retirar la pizzera con cuidado, cubrir el fondo con el aceite restante y volver 
 
 Mezclar nuevamente la preparaci&#243;n, retirar la espuma superficial si la hubiera y verterla en la pizzera caliente. Hornear entre 15 y 20 minutos, hasta que est&#233; firme y dorada.
 
-Darle 1 o 2 minutos de grill para intensificar el dorado, vigilar para que no se queme, cortar en tri&#225;ngulos y servir caliente con pimienta.     False" tabindex="0" role="link" onclick="window.open('receta-36.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-36.html?v=1784245137028','_blank','noopener');}">
+Darle 1 o 2 minutos de grill para intensificar el dorado, vigilar para que no se queme, cortar en tri&#225;ngulos y servir caliente con pimienta.     False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-36.png?v=1784245137028" alt="Fain&#225;"></div>
+  <a class="card-link" href="receta-36-faina.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-36.png?v=1784317951863" alt="Fain&#225;"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Fain&#225;</h2>
@@ -299,7 +367,8 @@ Darle 1 o 2 minutos de grill para intensificar el dorado, vigilar para que no se
     <p class="summary">Fain&#225;: receta casera para guardar, preparar y compartir. Rinde 8 porciones finas.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="9" data-search="R00004 Galletas de avena y naranja   Fernando   publicada   2 - huevos
+  </a>
+</article><article class="card" data-recipe-id="9" data-search="R00004 Galletas de avena y naranja   Fernando   publicada   2 - huevos
 150 gr - miel
 1 unidad - ralladura de naranja
 130 gr - jugo de naranja
@@ -310,9 +379,10 @@ polvo de hornear  medir los ingredientes
 
 mezclar todo
 
-hornear 15 minutos a 180 grados  False" tabindex="0" role="link" onclick="window.open('receta-9.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-9.html?v=1784245137028','_blank','noopener');}">
+hornear 15 minutos a 180 grados  False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-9.png?v=1784245137028" alt="Galletas de avena y naranja"></div>
+  <a class="card-link" href="receta-9-galletas-de-avena-y-naranja.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-9.png?v=1784317951863" alt="Galletas de avena y naranja"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Galletas de avena y naranja</h2>
@@ -321,7 +391,50 @@ hornear 15 minutos a 180 grados  False" tabindex="0" role="link" onclick="window
     <p class="summary">Una nueva publicaci&#243;n del recetario.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="21" data-search="R00013 Hamburguesas de garbanzos Hamburguesas caseras de garbanzos, doradas por fuera y h&#250;medas por dentro, con verduras, especias, perejil y un toque de lim&#243;n. Se pueden servir en pan o al plato.  Fernando I  F&#225;cil publicada garbanzos, hamburguesas, vegetariana, legumbres, sart&#233;n, saludable  500 g - garbanzos cocidos y bien escurridos
+  </a>
+</article><article class="card" data-recipe-id="19" data-search="R00011 Guiso de lentejas Guiso de lentejas bien completo y casero, con carne, chorizo colorado, verduras, papa, tomate y especias. Una receta rendidora, reconfortante y muy sabrosa para d&#237;as frescos.  Fernando I  Media publicada guiso, lentejas, legumbres, carne, invierno, olla  400 g - lentejas secas
+250 g - carne vacuna en cubos
+1 unidad - chorizo colorado en rodajas
+1 unidad - cebolla picada
+1 unidad - zanahoria en cubos
+1/2 unidad - morr&#243;n rojo picado
+2 unidades - dientes de ajo picados
+2 unidades - papas medianas en cubos
+400 g - tomate triturado
+1 litro - caldo de carne o verduras, aproximadamente
+1 cucharadita - piment&#243;n dulce
+1/2 cucharadita - comino
+1 unidad - hoja de laurel
+2 cucharadas - aceite
+Sal y pimienta
+Perejil fresco, opcional 6 porciones Revisar y enjuagar las lentejas. Si la variedad lo requiere, dejarlas en remojo seg&#250;n las indicaciones del envase y escurrirlas.
+
+Calentar el aceite en una olla grande. Dorar la carne en tandas para que tome buen color y reservarla.
+
+En la misma olla, cocinar cebolla, zanahoria y morr&#243;n durante 6 a 8 minutos. Agregar el ajo, piment&#243;n y comino, y mezclar durante 30 segundos.
+
+Incorporar el tomate, las lentejas, la carne, el chorizo colorado, el laurel y suficiente caldo para cubrir holgadamente.
+
+Llevar a hervor suave, tapar parcialmente y cocinar unos 30 minutos, revolviendo ocasionalmente y agregando caldo si fuera necesario.
+
+A&#241;adir las papas y continuar la cocci&#243;n de 20 a 25 minutos, hasta que las lentejas y las papas est&#233;n tiernas y el guiso espeso.
+
+Retirar el laurel, ajustar sal y pimienta, y dejar reposar 5 minutos.
+
+Servir caliente con perejil fresco si se desea. Consejo: el guiso suele quedar a&#250;n m&#225;s sabroso al d&#237;a siguiente; enfriarlo r&#225;pidamente y conservarlo refrigerado. 1 h 20 min    False">
+  <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
+  <a class="card-link" href="receta-19-guiso-de-lentejas.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-19.png?v=1784317951863" alt="Guiso de lentejas"></div>
+  <div class="content">
+    <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
+    <h2>Guiso de lentejas</h2>
+    <p class="author">Por Fernando I</p>
+    
+    <p class="summary">Guiso de lentejas bien completo y casero, con carne, chorizo colorado, verduras, papa, tomate y especias. Una receta rendidora, reconfortante y muy sabrosa para d&#237;as frescos.</p>
+    <span class="print-button">Ver receta</span>
+  </div>
+  </a>
+</article><article class="card" data-recipe-id="21" data-search="R00013 Hamburguesas de garbanzos Hamburguesas caseras de garbanzos, doradas por fuera y h&#250;medas por dentro, con verduras, especias, perejil y un toque de lim&#243;n. Se pueden servir en pan o al plato.  Fernando I  F&#225;cil publicada garbanzos, hamburguesas, vegetariana, legumbres, sart&#233;n, saludable  500 g - garbanzos cocidos y bien escurridos
 1/2 unidad - cebolla peque&#241;a picada
 1 unidad - diente de ajo picado
 1 unidad - zanahoria peque&#241;a rallada
@@ -346,9 +459,10 @@ Calentar una sart&#233;n con el aceite restante y cocinar las hamburguesas de 4 
 
 Servir en pan o al plato, con ensalada y la salsa preferida.
 
-Consejo: si la mezcla se desarma, sumar una cucharada m&#225;s de pan rallado; si queda seca, agregar una cucharadita de agua o lim&#243;n. Para hornearlas, pincelar con aceite y cocinar a 200 &#176;C, gir&#225;ndolas a mitad de cocci&#243;n. 45 min False" tabindex="0" role="link" onclick="window.open('receta-21.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-21.html?v=1784245137028','_blank','noopener');}">
+Consejo: si la mezcla se desarma, sumar una cucharada m&#225;s de pan rallado; si queda seca, agregar una cucharadita de agua o lim&#243;n. Para hornearlas, pincelar con aceite y cocinar a 200 &#176;C, gir&#225;ndolas a mitad de cocci&#243;n. 45 min False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-21.png?v=1784245137028" alt="Hamburguesas de garbanzos"></div>
+  <a class="card-link" href="receta-21-hamburguesas-de-garbanzos.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-21.png?v=1784317951863" alt="Hamburguesas de garbanzos"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Hamburguesas de garbanzos</h2>
@@ -357,7 +471,8 @@ Consejo: si la mezcla se desarma, sumar una cucharada m&#225;s de pan rallado; s
     <p class="summary">Hamburguesas caseras de garbanzos, doradas por fuera y h&#250;medas por dentro, con verduras, especias, perejil y un toque de lim&#243;n. Se pueden servir en pan o al plato.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="24" data-search="R00016 Lemon pie Lemon pie cl&#225;sico con base crocante, crema de lim&#243;n suave y merengue dorado. Un postre fresco, dulce y &#225;cido, ideal para servir bien fr&#237;o.  Fernando I  Media publicada postre, lim&#243;n, tarta, merengue, fr&#237;o, cl&#225;sico  250 g - harina (base)
+  </a>
+</article><article class="card" data-recipe-id="24" data-search="R00016 Lemon pie Lemon pie cl&#225;sico con base crocante, crema de lim&#243;n suave y merengue dorado. Un postre fresco, dulce y &#225;cido, ideal para servir bien fr&#237;o.  Fernando I  Media publicada postre, lim&#243;n, tarta, merengue, fr&#237;o, cl&#225;sico  250 g - harina (base)
 125 g - manteca fr&#237;a (base)
 80 g - az&#250;car impalpable (base)
 1 unidad - huevo (base)
@@ -386,9 +501,10 @@ Cubrir la tarta formando picos y dorar suavemente con soplete o grill.
 
 Enfriar al menos 2 horas antes de cortar.
 
-Servir fr&#237;o. Consejo: para cortes m&#225;s prolijos, usar un cuchillo limpio y apenas tibio entre porci&#243;n y porci&#243;n. 3 h aprox. False" tabindex="0" role="link" onclick="window.open('receta-24.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-24.html?v=1784245137028','_blank','noopener');}">
+Servir fr&#237;o. Consejo: para cortes m&#225;s prolijos, usar un cuchillo limpio y apenas tibio entre porci&#243;n y porci&#243;n. 3 h aprox. False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-24.png?v=1784245137028" alt="Lemon pie"></div>
+  <a class="card-link" href="receta-24-lemon-pie.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-24.png?v=1784317951863" alt="Lemon pie"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Lemon pie</h2>
@@ -397,7 +513,8 @@ Servir fr&#237;o. Consejo: para cortes m&#225;s prolijos, usar un cuchillo limpi
     <p class="summary">Lemon pie cl&#225;sico con base crocante, crema de lim&#243;n suave y merengue dorado. Un postre fresco, dulce y &#225;cido, ideal para servir bien fr&#237;o.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="25" data-search="R00017 Matambre a la pizza Matambre vacuno tiernizado y terminado al horno con salsa de tomate, mozzarella, tomate, morr&#243;n, or&#233;gano y aceitunas. Un cl&#225;sico argentino bien sabroso para compartir.  Fernando I  Media publicada carne, matambre, pizza, horno, argentino, plato principal  1,5 kg - matambre vacuno
+  </a>
+</article><article class="card" data-recipe-id="25" data-search="R00017 Matambre a la pizza Matambre vacuno tiernizado y terminado al horno con salsa de tomate, mozzarella, tomate, morr&#243;n, or&#233;gano y aceitunas. Un cl&#225;sico argentino bien sabroso para compartir.  Fernando I  Media publicada carne, matambre, pizza, horno, argentino, plato principal  1,5 kg - matambre vacuno
 1 litro - leche
 2 unidades - hojas de laurel
 Sal y pimienta
@@ -421,9 +538,10 @@ Gratinar en horno fuerte hasta que el queso se funda y quede dorado.
 
 Agregar aceitunas y dejar reposar 5 minutos antes de cortar.
 
-Cortar en porciones y servir caliente. Consejo: si el matambre es grueso, conviene darle m&#225;s tiempo de tiernizado antes del gratinado final. 2 h 20 min aprox.    False" tabindex="0" role="link" onclick="window.open('receta-25.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-25.html?v=1784245137028','_blank','noopener');}">
+Cortar en porciones y servir caliente. Consejo: si el matambre es grueso, conviene darle m&#225;s tiempo de tiernizado antes del gratinado final. 2 h 20 min aprox.    False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-25.png?v=1784245137028" alt="Matambre a la pizza"></div>
+  <a class="card-link" href="receta-25-matambre-a-la-pizza.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-25.png?v=1784317951863" alt="Matambre a la pizza"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Matambre a la pizza</h2>
@@ -432,7 +550,8 @@ Cortar en porciones y servir caliente. Consejo: si el matambre es grueso, convie
     <p class="summary">Matambre vacuno tiernizado y terminado al horno con salsa de tomate, mozzarella, tomate, morr&#243;n, or&#233;gano y aceitunas. Un cl&#225;sico argentino bien sabroso para compartir.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="12" data-search="R00006 Milanesas de carne   Fernando I   publicada   800 gr - Nalga cortada para milanesa
+  </a>
+</article><article class="card" data-recipe-id="12" data-search="R00006 Milanesas de carne   Fernando I   publicada   800 gr - Nalga cortada para milanesa
 3 - huevos
 2 - dientes de ajo
 3 cdas - perejil picado fino
@@ -453,9 +572,10 @@ Acomodarlas sin amontonar, taparlas y llevarlas a la heladera durante 15 minutos
 
 Calentar en una sart&#233;n amplia una capa de 1,5 a 2 cm de aceite, idealmente a 170-180 &#176;C. Fre&#237;r pocas milanesas por tanda, aproximadamente 1 a 2 minutos por lado, hasta que est&#233;n doradas y la carne est&#233; cocida. Evitar llenar la sart&#233;n para que el aceite no pierda temperatura.
 
-Retirar con pinza o espumadera y dejar escurrir sobre una rejilla; si no hay rejilla, usar papel absorbente sin apilarlas. Servir enseguida con gajos de lim&#243;n y la guarnici&#243;n elegida.  False" tabindex="0" role="link" onclick="window.open('receta-12.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-12.html?v=1784245137028','_blank','noopener');}">
+Retirar con pinza o espumadera y dejar escurrir sobre una rejilla; si no hay rejilla, usar papel absorbente sin apilarlas. Servir enseguida con gajos de lim&#243;n y la guarnici&#243;n elegida.  False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-12.png?v=1784245137028" alt="Milanesas de carne"></div>
+  <a class="card-link" href="receta-12-milanesas-de-carne.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-12.png?v=1784317951863" alt="Milanesas de carne"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Milanesas de carne</h2>
@@ -464,7 +584,8 @@ Retirar con pinza o espumadera y dejar escurrir sobre una rejilla; si no hay rej
     <p class="summary">Una nueva publicaci&#243;n del recetario.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="32" data-search="R00024 Sopa paraguaya Sopa Paraguaya: ma&#237;z casera para guardar, preparar y compartir. Rinde 8 porciones.  Fernando I  F&#225;cil publicada ma&#237;z, queso, horno, paraguaya  500 g de harina de ma&#237;z fina (no f&#233;cula)
+  </a>
+</article><article class="card" data-recipe-id="32" data-search="R00024 Sopa paraguaya Sopa Paraguaya: ma&#237;z casera para guardar, preparar y compartir. Rinde 8 porciones.  Fernando I  F&#225;cil publicada ma&#237;z, queso, horno, paraguaya  500 g de harina de ma&#237;z fina (no f&#233;cula)
 500 ml de leche entera
 4 huevos
 3 cebollas grandes
@@ -483,9 +604,10 @@ Enmantecar una fuente de aproximadamente 24 x 30 cm. Verter la mezcla, alisar y 
 
 Hornear a 190 &#176;C durante 35 a 45 minutos, hasta que la superficie est&#233; bien dorada y el centro firme.
 
-Dejar reposar 10 a 15 minutos. Cortar en cuadrados y servir tibia como entrada, guarnici&#243;n o plato principal ligero.  False" tabindex="0" role="link" onclick="window.open('receta-32.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-32.html?v=1784245137028','_blank','noopener');}">
+Dejar reposar 10 a 15 minutos. Cortar en cuadrados y servir tibia como entrada, guarnici&#243;n o plato principal ligero.  False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-32.png?v=1784245137028" alt="Sopa paraguaya"></div>
+  <a class="card-link" href="receta-32-sopa-paraguaya.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-32.png?v=1784317951863" alt="Sopa paraguaya"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Sopa paraguaya</h2>
@@ -494,7 +616,8 @@ Dejar reposar 10 a 15 minutos. Cortar en cuadrados y servir tibia como entrada, 
     <p class="summary">Sopa Paraguaya: ma&#237;z casera para guardar, preparar y compartir. Rinde 8 porciones.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="10" data-search="R00005 Sopa paraguaya light   Fernando   publicada   300 gr - cebolla picada fina
+  </a>
+</article><article class="card" data-recipe-id="10" data-search="R00005 Sopa paraguaya light   Fernando   publicada   300 gr - cebolla picada fina
 40 ml - aceite de oliva
 3 - huevos
 300 gr - Harina de maiz fina
@@ -514,9 +637,10 @@ Ir agregando lentamente el agua caliente hasta lograr una mezcla espesa.
 
 Volcar en una fuente aceitada (muy poco).
 
-Hornear a 180&#176;C durante 35–45 min, hasta que quede firme y dorada arriba  False" tabindex="0" role="link" onclick="window.open('receta-10.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-10.html?v=1784245137028','_blank','noopener');}">
+Hornear a 180&#176;C durante 35–45 min, hasta que quede firme y dorada arriba  False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-10.png?v=1784245137028" alt="Sopa paraguaya light"></div>
+  <a class="card-link" href="receta-10-sopa-paraguaya-light.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-10.png?v=1784317951863" alt="Sopa paraguaya light"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Sopa paraguaya light</h2>
@@ -525,7 +649,8 @@ Hornear a 180&#176;C durante 35–45 min, hasta que quede firme y dorada arriba 
     <p class="summary">Una nueva publicaci&#243;n del recetario.</p>
     <span class="print-button">Ver receta</span>
   </div>
-</article><article class="card clickable-card" data-recipe-id="34" data-search="R00026 Vitel ton&#233; Vitel Ton&#233;. Rinde 8 porciones.  Fernando I  Media publicada carne, salsa, fr&#237;o, cl&#225;sico  Para la carne:
+  </a>
+</article><article class="card" data-recipe-id="34" data-search="R00026 Vitel ton&#233; Vitel Ton&#233;. Rinde 8 porciones.  Fernando I  Media publicada carne, salsa, fr&#237;o, cl&#225;sico  Para la carne:
 1,2 kg de peceto
 1 cebolla
 1 zanahoria
@@ -556,9 +681,10 @@ Cortar el peceto fr&#237;o en l&#225;minas finas con un cuchillo afilado. Acomod
 
 Cubrir con parte de la salsa y repetir las capas hasta terminar. Tapar y refrigerar al menos 6 horas para que los sabores se integren.
 
-Antes de servir, ajustar la consistencia con un poco de caldo si fuera necesario y decorar con alcaparras. Servir bien fr&#237;o.  False" tabindex="0" role="link" onclick="window.open('receta-34.html?v=1784245137028','_blank','noopener')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('receta-34.html?v=1784245137028','_blank','noopener');}">
+Antes de servir, ajustar la consistencia con un poco de caldo si fuera necesario y decorar con alcaparras. Servir bien fr&#237;o.  False">
   <button class="favorite-button" type="button" aria-label="Guardar en favoritos" aria-pressed="false" onclick="toggleFavorite(event,this)" onkeydown="event.stopPropagation()">♡</button>
-  <div class="image"><img src="media/receta-34.png?v=1784245137028" alt="Vitel ton&#233;"></div>
+  <a class="card-link" href="receta-34-vitel-tone.html" target="_blank" rel="noopener">
+  <div class="image"><img src="media/receta-34.png?v=1784317951863" alt="Vitel ton&#233;"></div>
   <div class="content">
     <p class="eyebrow">RECETA &#183; PUBLICACI&#211;N</p>
     <h2>Vitel ton&#233;</h2>
@@ -567,6 +693,7 @@ Antes de servir, ajustar la consistencia con un poco de caldo si fuera necesario
     <p class="summary">Vitel Ton&#233;. Rinde 8 porciones.</p>
     <span class="print-button">Ver receta</span>
   </div>
+  </a>
 </article></section></main>
   <div class="favorite-dialog hidden" id="favoriteDialog" role="dialog" aria-modal="true" aria-labelledby="favoriteMessage"><div class="favorite-dialog-card"><p id="favoriteMessage">Para guardar favoritos, ingresá o creá tu cuenta.</p><div class="dialog-actions"><a id="favoriteLogin" href="mi-cuenta.html">Ingresar o crear cuenta</a><button type="button" onclick="closeFavoriteDialog()">Ahora no</button></div></div></div>
   <script>
