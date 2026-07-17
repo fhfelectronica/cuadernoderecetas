@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://cuadernoderecetas.com.ar/</loc></url>
+  <url><loc>https://cuadernoderecetas.com.ar/acerca-de.html</loc></url>
+  <url><loc>https://cuadernoderecetas.com.ar/contacto.html</loc></url>
+  <url><loc>https://cuadernoderecetas.com.ar/informacion-legal.html</loc></url>
+  <url><loc>https://cuadernoderecetas.com.ar/privacidad.html</loc></url>
+  <url><loc>https://cuadernoderecetas.com.ar/cookies.html</loc></url>
+  <url><loc>https://cuadernoderecetas.com.ar/terminos.html</loc></url>
   <url><loc>https://cuadernoderecetas.com.ar/aros-de-cebolla.html</loc></url>
   <url><loc>https://cuadernoderecetas.com.ar/bondiola-desmenuzada.html</loc></url>
   <url><loc>https://cuadernoderecetas.com.ar/bruschettas-de-tomate-y-albahaca.html</loc></url>
